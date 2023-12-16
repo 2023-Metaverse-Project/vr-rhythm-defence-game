@@ -18,8 +18,8 @@ public class GestureRecognizer : MonoBehaviour
     public float newPositionThresholdDistance = 0.1f;
 
     [Header("# Debug Info")]
-    public bool isDebugMode = true;
-    public GameObject debugCubePrefab;
+    public SparkMemoryPool sparkMemoryPool;
+    public GameObject projectilePrefab;
     public float scoreThreshold;
 
     [Header("# Gesture Info")]
@@ -75,8 +75,8 @@ public class GestureRecognizer : MonoBehaviour
         positionList.Clear();
         positionList.Add(movementSource.position);
 
-        if (isDebugMode && debugCubePrefab)
-            Destroy(Instantiate(debugCubePrefab, movementSource.position, Quaternion.identity), 3);
+        if (projectilePrefab)
+            sparkMemoryPool.spawnSpark(movementSource.position);
     }
 
     void EndMovement()
@@ -131,8 +131,8 @@ public class GestureRecognizer : MonoBehaviour
         if (Vector3.Distance(movementSource.position, lastPosition) > newPositionThresholdDistance)
         {
             positionList.Add(movementSource.position);
-            if (isDebugMode && debugCubePrefab)
-                Destroy(Instantiate(debugCubePrefab, movementSource.position, Quaternion.identity), 3);
+            if (projectilePrefab)
+                sparkMemoryPool.spawnSpark(movementSource.position);
         }
 
     }
