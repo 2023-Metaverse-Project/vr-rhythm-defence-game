@@ -674,9 +674,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e9d50de6bb47a944a78bbdf13e65f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputSource: 5
+  inputSource: 4
   inputButton: 2
-  movementSource: {fileID: 2092735189}
+  movementSource: {fileID: 2123713661}
   newPositionThresholdDistance: 0.01
   sparkMemoryPool: {fileID: 183014600}
   projectilePrefab: {fileID: 195900, guid: ec61825cb06be72419bb09eee03af08c, type: 3}
