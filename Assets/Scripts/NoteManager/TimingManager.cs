@@ -14,7 +14,10 @@ public class TimingManager : MonoBehaviour
     [SerializeField]
     RectTransform[] timingRect = null; // 다양한 판정 범위 Perfect, Good, Bad / Miss
 
-    Vector2[] timingBoxs = null; // 
+    Vector2[] timingBoxs = null; // 각 판정범위의 구체적인 시작과 끝
+
+    [SerializeField]
+    ParticleSystem[] effectList = null;
 
     void Start()
     {
@@ -24,7 +27,7 @@ public class TimingManager : MonoBehaviour
         {
             timingBoxs[i].Set(tfLeftNoteFrame.localPosition.x - timingRect[i].rect.width / 2,
                               tfLeftNoteFrame.localPosition.x + timingRect[i].rect.width / 2);
-
+            Debug.Log(timingBoxs[i]);
         }
     }
 
@@ -46,12 +49,15 @@ public class TimingManager : MonoBehaviour
                     rightNoteList[i].GetComponent<RightNote>().HideNote();
                     rightNoteList.RemoveAt(i);
 
+                    effectList[x].Play();
+
                     Debug.Log("Hit" + x);
                     return;
                 }
             }
         }
 
+        effectList[3].Play();
         Debug.Log("Miss");
     }    
 }
