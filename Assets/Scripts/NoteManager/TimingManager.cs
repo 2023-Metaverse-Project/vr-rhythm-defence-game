@@ -38,9 +38,11 @@ public class TimingManager : MonoBehaviour
             {
                 if (timingBoxs[x].x <= t_notePosX && t_notePosX <= timingBoxs[x].y)
                 {
+                    //Destroy(boxNoteList[i]);
                     boxNoteList[i].GetComponent<LeftNote>().HideNote();
                     boxNoteList.RemoveAt(i);
 
+                    //Destroy(rightNoteList[i]);
                     rightNoteList[i].GetComponent<RightNote>().HideNote();
                     rightNoteList.RemoveAt(i);
 

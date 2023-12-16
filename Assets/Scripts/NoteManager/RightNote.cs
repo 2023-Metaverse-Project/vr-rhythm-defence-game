@@ -9,6 +9,11 @@ public class RightNote : MonoBehaviour
 
     UnityEngine.UI.Image noteImage;
 
+    private void Start()
+    {
+        noteImage = GetComponent<UnityEngine.UI.Image>();
+    }
+
     public void HideNote()
     {
         noteImage.enabled = false;
