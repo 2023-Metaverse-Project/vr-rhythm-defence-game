@@ -773,7 +773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ed00a49f43817488e561a6e550c5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bpm: 30
+  bpm: 120
   tfLeftNoteSpawn: {fileID: 160929556}
   tfRightNoteSpawn: {fileID: 1397854682}
   leftNote: {fileID: 4160571542456464265, guid: 802d406d9a6ff1a4898400a1a1dffe2f, type: 3}
