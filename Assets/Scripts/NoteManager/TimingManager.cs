@@ -17,7 +17,9 @@ public class TimingManager : MonoBehaviour
     Vector2[] timingBoxs = null; // 각 판정범위의 구체적인 시작과 끝
 
     [SerializeField]
-    ParticleSystem[] effectList = null;
+    ParticleSystem[] leftEffectList = null;
+    [SerializeField]
+    ParticleSystem[] rightEffectList = null;
 
     void Start()
     {
@@ -49,7 +51,8 @@ public class TimingManager : MonoBehaviour
                     rightNoteList[i].GetComponent<RightNote>().HideNote();
                     rightNoteList.RemoveAt(i);
 
-                    effectList[x].Play();
+                    leftEffectList[x].Play();
+                    rightEffectList[x].Play();
 
                     Debug.Log("Hit" + x);
                     return;
@@ -57,7 +60,8 @@ public class TimingManager : MonoBehaviour
             }
         }
 
-        effectList[3].Play();
+        leftEffectList[3].Play();
+        rightEffectList[3].Play();
         Debug.Log("Miss");
     }    
 }
