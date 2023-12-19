@@ -17,6 +17,9 @@ public class GestureRecognizer : MonoBehaviour
     public Transform movementSource;
     public float newPositionThresholdDistance = 0.1f;
 
+    [Header("Change Skill")]
+    public UnityEvent<Skill> OnChangeSkill;
+
     [Header("# Debug Info")]
     public SparkMemoryPool sparkMemoryPool;
     public GameObject projectilePrefab;
@@ -114,6 +117,12 @@ public class GestureRecognizer : MonoBehaviour
             {
                 OnSkillChanged?.Invoke(result.GestureClass);
                 OnAccuracyChanged?.Invoke(result.Score);
+
+                // 스킬 결정 후 정보 전달
+                if (result.GestureClass == "Fireball")
+                    OnChangeSkill?.Invoke(Skill.Fireball);
+                else if (result.GestureClass == "Thunder")
+                    OnChangeSkill?.Invoke(Skill.Thunder);
             }
             else
             {

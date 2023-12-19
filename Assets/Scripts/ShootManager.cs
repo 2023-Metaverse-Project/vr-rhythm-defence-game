@@ -6,6 +6,7 @@ using UnityEngine.XR;
 using UnityEditor.Experimental.GraphView;
 using System.Net;
 using System;
+using UnityEditorInternal;
 
 public class ShootManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class ShootManager : MonoBehaviour
     public GameObject startPoint;
     public GameObject endPoint;
     public GameObject handPoint;
+    public float maxDistance;
+    public GameObject XROrigin;
 
     [Header("Skill Speed Setting")]
     public float perfectSpeed;
@@ -51,7 +54,7 @@ public class ShootManager : MonoBehaviour
                 break;
         }
 
-        timing = PressTiming.Pass;
+        //timing = PressTiming.Pass;
     }
 
     public void SetTiming(PressTiming pressTiming)
@@ -67,7 +70,7 @@ public class ShootManager : MonoBehaviour
     private void ShootPerfect()
     {
         missileSpeed = perfectSpeed;
-        ShootProjectileStartEnd();
+        ShootProjectileStartTarget();
     }
 
     private void ShootGood()
@@ -85,31 +88,55 @@ public class ShootManager : MonoBehaviour
     private void ShootProjectileStartEnd()
     {
         Vector3 spawnPosition = startPoint.transform.position;
-        GameObject projectile = null;
+        GameObject projectile = InstantiateSkillPrefab(spawnPosition);
 
-        if (skill == Skill.Fireball)
-        {
-            projectile = Instantiate(FireballPrefabs[(int)timing], spawnPosition, Quaternion.identity);
-        }
-        
 
-        Vector3 direction = endPoint.transform.position - startPoint.transform.position;
+
+        Vector3 direction = (endPoint.transform.position - startPoint.transform.position).normalized;
         projectile.transform.LookAt(spawnPosition + direction * 10f);
         projectile.GetComponent<Rigidbody>().AddForce(direction * missileSpeed);
     }
 
     private void ShootProjectileHandForward()
     {
-        Vector3 spawnPosition = handPoint.transform.position;
-        GameObject projectile = null;
+        Vector3 handPosition = handPoint.transform.position;
+        GameObject projectile = InstantiateSkillPrefab(handPosition);
 
+        Vector3 direction = handPoint.transform.forward.normalized;
+        projectile.transform.LookAt(handPosition + direction * 10f);
+        projectile.GetComponent<Rigidbody>().AddForce(direction * missileSpeed);
+    }
+
+    private void ShootProjectileStartTarget()
+    {
+        Vector3 spawnPosition = startPoint.transform.position;
+        Vector3 handPosition = handPoint.transform.position;
+        GameObject projectile = InstantiateSkillPrefab(spawnPosition);
+
+        Vector3 targetPosition = new Vector3(XROrigin.transform.position.x, XROrigin.transform.position.y - 50, XROrigin.transform.position.z);
+        if (Physics.Raycast(handPoint.transform.position, handPoint.transform.forward, out RaycastHit hitInfo, maxDistance))
+        {
+            targetPosition = hitInfo.transform.position;
+        }
+
+
+        Vector3 direction = (targetPosition - spawnPosition).normalized;
+        projectile.transform.LookAt(spawnPosition + direction * 10f);
+        projectile.GetComponent<Rigidbody>().AddForce(direction * missileSpeed);
+    }
+
+    private GameObject InstantiateSkillPrefab(Vector3 spawnPosition)
+    {
+        GameObject projectile = null;
         if (skill == Skill.Fireball)
         {
             projectile = Instantiate(FireballPrefabs[(int)timing], spawnPosition, Quaternion.identity);
         }
+        else if (skill == Skill.Thunder)
+        {
+            projectile = Instantiate(ThunderPrefabs[(int)timing], spawnPosition, Quaternion.identity);
+        }
 
-        Vector3 direction = handPoint.transform.forward;
-        projectile.transform.LookAt(spawnPosition + direction * 10f);
-        projectile.GetComponent<Rigidbody>().AddForce(direction * missileSpeed);
+        return projectile;
     }
 }
