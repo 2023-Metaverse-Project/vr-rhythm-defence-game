@@ -822,10 +822,10 @@ MonoBehaviour:
   inputSource: 5
   inputButton: 6
   movementSource: {fileID: 2092735189}
-  speed: 1000
+  speed: 400
   fireRate: 0.2
   missilePrefabs:
-  - {fileID: 1587250918974726, guid: e9e9458c34ca3044d87b5f69ebf36957, type: 3}
+  - {fileID: 6427749512348453943, guid: 88d92df949b72a14aa1dce0b0c19d71b, type: 3}
   - {fileID: 1587250918974726, guid: ebddf2fa637946441ac8b9716e846ad3, type: 3}
 --- !u!4 &1039708056
 Transform:
@@ -1509,6 +1509,37 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1961793975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1961793976}
+  m_Layer: 0
+  m_Name: FireballPerfect Shooter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1961793976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961793975}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.69, y: 4.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2015948424
 GameObject:
   m_ObjectHideFlags: 0
@@ -2938,3 +2969,4 @@ SceneRoots:
   - {fileID: 332302681}
   - {fileID: 1590479505}
   - {fileID: 1039708056}
+  - {fileID: 1961793976}
