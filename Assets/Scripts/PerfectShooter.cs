@@ -5,16 +5,11 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
 using UnityEditor.Experimental.GraphView;
 
-public class Shooter : MonoBehaviour
+public class PerfectShooter : MonoBehaviour
 {
-    [Header("# Input Info")]
-    public XRNode inputSource;
-    public InputHelpers.Button inputButton;
-    private float inputThreshold = 0.1f;
-    public Transform movementSource;
-
     public float speed = 700;
     public float fireRate = 0.2f;
+    public GameObject shootPoint;
 
     private bool canShoot = true;
 
@@ -24,13 +19,6 @@ public class Shooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        InputHelpers.IsPressed(InputDevices.GetDeviceAtXRNode(inputSource), inputButton, out bool isPressed, inputThreshold);
-
-        if (isPressed && canShoot)
-        {
-            StartCoroutine(Shoot(0));
-        }
     }
 
     private IEnumerator Shoot(int missileIndex)
@@ -43,11 +31,11 @@ public class Shooter : MonoBehaviour
 
     void ShootProjectile(int missileIndex)
     {
-        Vector3 spawnPositionWithOffset = movementSource.position;
+        Vector3 spawnPositionWithOffset = shootPoint.transform.position;
         GameObject projectile = Instantiate(missilePrefabs[missileIndex], spawnPositionWithOffset, Quaternion.identity);
 
-        Vector3 direction = movementSource.forward.normalized;
-        projectile.transform.LookAt(spawnPositionWithOffset + direction * 10f);
-        projectile.GetComponent<Rigidbody>().AddForce(direction * speed);
+        //Vector3 direction = movementSource.forward.normalized;
+        //projectile.transform.LookAt(spawnPositionWithOffset + direction * 10f);
+        //projectile.GetComponent<Rigidbody>().AddForce(direction * speed);
     }
 }

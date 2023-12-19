@@ -1,0 +1,1 @@
+public enum PressTiming { Perfect = 0, Good, Bad, Miss, Pass }
