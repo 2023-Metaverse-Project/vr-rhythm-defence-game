@@ -282,7 +282,7 @@ Transform:
   m_GameObject: {fileID: 138491778}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.51, y: 0.57, z: 4.7}
+  m_LocalPosition: {x: -2.47, y: 0.57, z: 10.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -852,19 +852,16 @@ MonoBehaviour:
   startPoint: {fileID: 1682953064}
   endPoint: {fileID: 138491778}
   handPoint: {fileID: 2092735188}
-  missileSpeed: 700
-  skillIndex: 0
+  perfectSpeed: 100
+  goodSpeed: 600
+  badSpeed: 600
+  skill: 0
   timing: 4
-  missilePrefabs:
+  FireballPrefabs:
   - {fileID: 6427749512348453943, guid: 08af7096230858942b21f41d56630d43, type: 3}
   - {fileID: 6427749512348453943, guid: 88d92df949b72a14aa1dce0b0c19d71b, type: 3}
   - {fileID: 6427749512348453943, guid: 7e0982bb1a01c6f43ac18a1d080b95de, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  ThunderPrefabs: []
 --- !u!4 &1039708056
 Transform:
   m_ObjectHideFlags: 0
@@ -1174,7 +1171,7 @@ Transform:
   m_GameObject: {fileID: 1682953064}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.36, y: 6.12, z: 10.3}
+  m_LocalPosition: {x: -0.41, y: 6.45, z: 10.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
