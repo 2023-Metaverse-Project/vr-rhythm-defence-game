@@ -22,5 +22,4 @@ public class Spark : MonoBehaviour
 
         memoryPool.DeactivatePoolItem(this.gameObject);
     }
-
 }
