@@ -6,15 +6,9 @@ TagManager:
   tags:
   - LeftNote
   - RightNote
-  - FireballPerfect
-  - FireballGood
-  - FireballBad
-  - PlasmaPerfect
-  - PlasmaGood
-  - PlasmaBad
-  - IcePerfect
-  - IceGood
-  - IceBad
+  - MonsterBig
+  - MonsterMiddle
+  - MonsterSmall
   layers:
   - Default
   - TransparentFX

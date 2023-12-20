@@ -44,12 +44,14 @@ public class EnemySpawner : MonoBehaviour
             yield return StartCoroutine(SpawnEnemy(factor));
 
             factor += additiveFactor;
+            delayPerSpawnGroup = Mathf.Clamp(Random.Range(delayPerSpawnGroup - delayPerSpawnGroup / 2, delayPerSpawnGroup + delayPerSpawnGroup / 2),
+                                1f, 5f);
         }
     }
 
     private IEnumerator SpawnEnemy(float factor)
     {
-        float spawnCount = Random.Range(factor, factor * 2);
+        float spawnCount = factor;
 
         for (int i = 0; i < spawnCount; ++i)
         {

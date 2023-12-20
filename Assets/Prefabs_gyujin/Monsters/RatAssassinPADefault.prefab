@@ -521,10 +521,12 @@ GameObject:
   - component: {fileID: 6360842387561343558}
   - component: {fileID: 1270238442407247709}
   - component: {fileID: 1152624754374856946}
+  - component: {fileID: -1737764294295761269}
   - component: {fileID: 5302186474826756271}
+  - component: {fileID: 6061755554997881647}
   m_Layer: 0
   m_Name: RatAssassinPADefault
-  m_TagString: Untagged
+  m_TagString: MonsterSmall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -589,6 +591,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-1737764294295761269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2209351208615343637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09fc29c7b9184a46b8981e713a5ad67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5302186474826756271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,6 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 50
+  speed: 3
   skinnedMeshRenderer: {fileID: 2139086380947485851}
   fireballPerfectDamage: 20
   fireballGoodDamage: 10
@@ -614,6 +629,29 @@ MonoBehaviour:
   iceBadDamage: 5
   enemyType: 2
   multiplier: 2
+--- !u!136 &6061755554997881647
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2209351208615343637}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6564277
+  m_Height: 1.5348524
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7449339, z: 0.346672}
 --- !u!1 &2310168713872509655
 GameObject:
   m_ObjectHideFlags: 0

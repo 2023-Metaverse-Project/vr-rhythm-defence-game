@@ -8,10 +8,12 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     private NavMeshAgent agent; 
-    public EnemyAnimatorController animatorController;
+    private EnemyAnimatorController animatorController;
 
     [SerializeField]
     private float maxHP = 100;
+    [SerializeField]
+    private float speed;
     private float currentHP;
 
     [Header("Damages")]
@@ -40,7 +42,7 @@ public class Enemy : MonoBehaviour
         animatorController = GetComponent<EnemyAnimatorController>();
 
         agent.SetDestination(new Vector3(-3, 8, -124));
-        agent.speed *= Random.Range(0.8f, 1.5f);
+        agent.speed = speed;
 
         currentHP = maxHP;
     }
@@ -66,17 +68,25 @@ public class Enemy : MonoBehaviour
     private IEnumerator HitNormalEffect()
     {
         Color originalColor = skinnedMeshRenderer.material.color;
+        float originalSpeed = agent.speed;
+
         skinnedMeshRenderer.material.color = Color.yellow;
+        agent.speed = 0;
         yield return new WaitForSeconds(0.2f);
         skinnedMeshRenderer.material.color = originalColor;
+        agent.speed = originalSpeed;
     }
 
     private IEnumerator HitCriticalEffect()
     {
         Color originalColor = skinnedMeshRenderer.material.color;
+        float originalSpeed = agent.speed;
+
         skinnedMeshRenderer.material.color = Color.red;
-        yield return new WaitForSeconds(0.2f);
+        agent.speed = 0;
+        yield return new WaitForSeconds(0.4f);
         skinnedMeshRenderer.material.color = originalColor;
+        agent.speed = originalSpeed;
     }
 
     private void OnCollisionEnter(Collision collision)

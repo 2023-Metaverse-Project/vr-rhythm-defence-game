@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: -7646927571807020102}
   m_Layer: 0
   m_Name: BlackKnightPADefault
-  m_TagString: Untagged
+  m_TagString: MonsterBig
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,8 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a1ce66cfd74874fb67c3944e0dd6a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatorController: {fileID: 0}
   maxHP: 100
+  speed: 1
   skinnedMeshRenderer: {fileID: 1184222674320758106}
   fireballPerfectDamage: 50
   fireballGoodDamage: 20
