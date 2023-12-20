@@ -20,6 +20,8 @@ public class PressRecognizer : MonoBehaviour
 
     private bool canPress = true;
 
+    private float missPenaltySecond = 2.0f;
+
     [Header("# Events")]
     [SerializeField]
     private UnityEvent onPressed;
@@ -31,6 +33,7 @@ public class PressRecognizer : MonoBehaviour
 
         if (isPressed && canPress)
         {
+            StopAllCoroutines();
             StartCoroutine(Press());
         }
     }
@@ -40,6 +43,19 @@ public class PressRecognizer : MonoBehaviour
         canPress = false;
         onPressed?.Invoke();
         yield return new WaitForSeconds(pressRate);
+        canPress = true;
+    }
+
+    public void OnPenalty()
+    {
+        StopAllCoroutines();
+        StartCoroutine(Penalty());
+    }
+
+    private IEnumerator Penalty()
+    {
+        canPress = false;
+        yield return new WaitForSeconds(missPenaltySecond);
         canPress = true;
     }
 }

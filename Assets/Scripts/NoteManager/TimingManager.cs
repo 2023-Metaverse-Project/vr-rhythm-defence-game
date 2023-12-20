@@ -25,6 +25,9 @@ public class TimingManager : MonoBehaviour
     [SerializeField]
     private UnityEvent<PressTiming> onTimingChecked;
 
+    [SerializeField]
+    private UnityEvent onMissPenalty;
+
     ComboManager comboManager;
 
     void Start()
@@ -95,6 +98,7 @@ public class TimingManager : MonoBehaviour
 
         onTimingChecked?.Invoke(PressTiming.Miss);
         comboManager?.ResetCombo();
+        onMissPenalty?.Invoke();
         //Debug.Log("Miss");
     }    
 }
