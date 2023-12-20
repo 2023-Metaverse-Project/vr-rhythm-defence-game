@@ -59,7 +59,9 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        StopAllCoroutines();
         agent.speed = 0;
+        skinnedMeshRenderer.material.color = Color.white;
         animatorController.DieAnim();
         if (gameObject != null)
             Destroy(gameObject, 2f);
@@ -72,7 +74,8 @@ public class Enemy : MonoBehaviour
 
         skinnedMeshRenderer.material.color = Color.yellow;
         agent.speed = 0;
-        yield return new WaitForSeconds(0.2f);
+        animatorController.GetHitAnim();
+        yield return new WaitForSeconds(0.4f);
         skinnedMeshRenderer.material.color = originalColor;
         agent.speed = originalSpeed;
     }
@@ -84,6 +87,7 @@ public class Enemy : MonoBehaviour
 
         skinnedMeshRenderer.material.color = Color.red;
         agent.speed = 0;
+        animatorController.GetHitAnim();
         yield return new WaitForSeconds(0.4f);
         skinnedMeshRenderer.material.color = originalColor;
         agent.speed = originalSpeed;
