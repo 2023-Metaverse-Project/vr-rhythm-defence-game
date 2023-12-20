@@ -8,6 +8,7 @@ using UnityEngine.AI;
 public class Enemy : MonoBehaviour
 {
     private NavMeshAgent agent; 
+    public EnemyAnimatorController animatorController;
 
     [SerializeField]
     private float maxHP = 100;
@@ -35,7 +36,8 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
+        animatorController = GetComponent<EnemyAnimatorController>();
 
         agent.SetDestination(new Vector3(-3, 8, -124));
         agent.speed *= Random.Range(0.8f, 1.5f);
@@ -55,8 +57,10 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        agent.speed = 0;
+        animatorController.DieAnim();
         if (gameObject != null)
-            Destroy(gameObject);
+            Destroy(gameObject, 2f);
     }
 
     private IEnumerator HitNormalEffect()

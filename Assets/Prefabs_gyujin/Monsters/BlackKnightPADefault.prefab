@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 4570794205826878714}
   - component: {fileID: 6277588213433891401}
   - component: {fileID: 1840581849213738727}
+  - component: {fileID: 4503162203966731408}
   - component: {fileID: 1722429265590045711}
   - component: {fileID: -7646927571807020102}
   m_Layer: 0
@@ -313,6 +314,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4503162203966731408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614038612876350582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e09fc29c7b9184a46b8981e713a5ad67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1722429265590045711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a1ce66cfd74874fb67c3944e0dd6a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  animatorController: {fileID: 0}
   maxHP: 100
   skinnedMeshRenderer: {fileID: 1184222674320758106}
   fireballPerfectDamage: 50
