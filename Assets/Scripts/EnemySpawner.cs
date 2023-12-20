@@ -21,6 +21,16 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    public void GameOver()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            GameObject child = transform.GetChild(i).gameObject;
+
+            child.GetComponent<Enemy>().Victory();
+        }
+    }
+
     public void Play()
     {
         StartCoroutine(nameof(SpawnProcess));
@@ -60,4 +70,5 @@ public class EnemySpawner : MonoBehaviour
             }
         }
     }
+
 }

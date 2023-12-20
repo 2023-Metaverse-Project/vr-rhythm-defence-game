@@ -65,7 +65,7 @@ public class NotesManager : MonoBehaviour
             // 유저가 버튼을 누르지 않고 그냥 지나친 Note의 경우 이 값이 True이다.
             if (collision.gameObject.GetComponent<LeftNote>().getNoteImageEnabled() == true)
             {
-                theComboManager.ResetCombo();
+                theComboManager?.ResetCombo();
             }
         }
         else if (collision.CompareTag("RightNote"))

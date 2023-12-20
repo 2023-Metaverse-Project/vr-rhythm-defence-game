@@ -70,17 +70,17 @@ public class TimingManager : MonoBehaviour
                     {
                         case 0: // Perfect
                             onTimingChecked?.Invoke(PressTiming.Perfect);
-                            comboManager.IncreaseCombo(); // ÄÞº¸ Áõ°¡
+                            comboManager?.IncreaseCombo(); // ÄÞº¸ Áõ°¡
                             break;
 
                         case 1: // Good
                             onTimingChecked?.Invoke(PressTiming.Good);
-                            comboManager.IncreaseCombo(); // ÄÞº¸ Áõ°¡
+                            comboManager?.IncreaseCombo(); // ÄÞº¸ Áõ°¡
                             break;
 
                         case 2: // Bad
                             onTimingChecked?.Invoke(PressTiming.Bad);
-                            comboManager.ResetCombo();
+                            comboManager?.ResetCombo();
                             break;
                     }
 
@@ -94,7 +94,7 @@ public class TimingManager : MonoBehaviour
         rightEffectList[3].Play();
 
         onTimingChecked?.Invoke(PressTiming.Miss);
-        comboManager.ResetCombo();
+        comboManager?.ResetCombo();
         //Debug.Log("Miss");
     }    
 }

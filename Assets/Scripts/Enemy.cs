@@ -57,6 +57,15 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void Victory()
+    {
+        StopAllCoroutines();
+        agent.speed = 0;
+        skinnedMeshRenderer.material.color = Color.white;
+
+        animatorController.Victory();
+    }
+
     public void Die()
     {
         StopAllCoroutines();

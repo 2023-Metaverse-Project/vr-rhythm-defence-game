@@ -17,6 +17,11 @@ public class EnemyAnimatorController : MonoBehaviour
         
     }
 
+    public void Victory()
+    {
+        animator.SetBool("isVictory", true);
+    }
+
     public void DieAnim()
     {
         animator.SetBool("isAlive", false);
