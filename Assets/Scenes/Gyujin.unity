@@ -709,6 +709,9 @@ MonoBehaviour:
   inputButton: 2
   movementSource: {fileID: 2123713661}
   newPositionThresholdDistance: 0.01
+  OnChangeSkill:
+    m_PersistentCalls:
+      m_Calls: []
   sparkMemoryPool: {fileID: 183014600}
   projectilePrefab: {fileID: 195900, guid: ec61825cb06be72419bb09eee03af08c, type: 3}
   scoreThreshold: 0
@@ -852,16 +855,21 @@ MonoBehaviour:
   startPoint: {fileID: 1682953064}
   endPoint: {fileID: 138491778}
   handPoint: {fileID: 2092735188}
+  maxDistance: 0
+  XROrigin: {fileID: 1133173076}
   perfectSpeed: 100
   goodSpeed: 600
   badSpeed: 600
   skill: 0
   timing: 4
   FireballPrefabs:
-  - {fileID: 6427749512348453943, guid: 08af7096230858942b21f41d56630d43, type: 3}
+  - {fileID: 3108223457779650296, guid: 33cdeaa73f5aeee4eb3e3f7ea515c64d, type: 3}
   - {fileID: 6427749512348453943, guid: 88d92df949b72a14aa1dce0b0c19d71b, type: 3}
   - {fileID: 6427749512348453943, guid: 7e0982bb1a01c6f43ac18a1d080b95de, type: 3}
-  ThunderPrefabs: []
+  ThunderPrefabs:
+  - {fileID: 7290027298486706542, guid: 67906ef600259fd42a319e4adf584e88, type: 3}
+  - {fileID: 6405569524035434752, guid: bc0ef9b2d403e4d4f85bd24ab9923f64, type: 3}
+  - {fileID: 6405569524035434752, guid: b609e2d7dde100345a25ac7edc1c86c1, type: 3}
 --- !u!4 &1039708056
 Transform:
   m_ObjectHideFlags: 0
