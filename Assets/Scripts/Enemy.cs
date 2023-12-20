@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
     {
         StopAllCoroutines();
         agent.speed = 0;
-        skinnedMeshRenderer.material.color = Color.white;
+        skinnedMeshRenderer.material.color = Color.red;
         animatorController.DieAnim();
         if (gameObject != null)
             Destroy(gameObject, 2f);
