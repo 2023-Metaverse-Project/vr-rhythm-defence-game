@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private bool isPlayOnStart = true;
     [SerializeField]
-    private float startFactor = 1;
+    private float factor = 1;
     [SerializeField]
     private float delayPerSpawnGroup = 3;
 
@@ -33,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnProcess()
     {
-        float factor = startFactor;
+        float factor = this.factor;
 
         while (true)
         {
@@ -41,8 +41,8 @@ public class EnemySpawner : MonoBehaviour
 
             yield return StartCoroutine(SpawnEnemy(factor));
 
-            delayPerSpawnGroup = Mathf.Clamp(Random.Range(delayPerSpawnGroup - delayPerSpawnGroup / 2, delayPerSpawnGroup + delayPerSpawnGroup / 2),
-                                1f, 5f);
+            delayPerSpawnGroup = Random.Range(5, 10);
+            this.factor = Random.Range(1, 5);
         }
     }
 

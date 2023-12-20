@@ -21,4 +21,9 @@ public class EnemyAnimatorController : MonoBehaviour
     {
         animator.SetBool("isAlive", false);
     }
+
+    public void GetHitAnim()
+    {
+        animator.SetTrigger("getHit");
+    }
 }

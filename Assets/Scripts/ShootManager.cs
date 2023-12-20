@@ -96,6 +96,7 @@ public class ShootManager : MonoBehaviour
 
         Vector3 direction = handPoint.transform.forward.normalized;
         projectile.transform.LookAt(handPosition + direction * 10f);
+        projectile.GetComponent<Rigidbody>().velocity = Vector3.zero;
         projectile.GetComponent<Rigidbody>().AddForce(direction * missileSpeed);
     }
 
@@ -113,6 +114,7 @@ public class ShootManager : MonoBehaviour
 
         Vector3 direction = (targetPosition - spawnPosition).normalized;
         projectile.transform.LookAt(spawnPosition + direction * 10f);
+        projectile.GetComponent<Rigidbody>().velocity = Vector3.zero;
         projectile.GetComponent<Rigidbody>().AddForce(direction * missileSpeed);
     }
 

@@ -628,7 +628,7 @@ MonoBehaviour:
   icePerfectDamage: 25
   iceGoodDamage: 10
   iceBadDamage: 5
-  enemyType: 2
+  enemyType: 1
   multiplier: 2
 --- !u!136 &6061755554997881647
 CapsuleCollider:

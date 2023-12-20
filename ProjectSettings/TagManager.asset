@@ -9,6 +9,11 @@ TagManager:
   - MonsterBig
   - MonsterMiddle
   - MonsterSmall
+  - FireballPerfect
+  - FireballGood
+  - IcePerfect
+  - IceGood
+  - IceBad
   layers:
   - Default
   - TransparentFX
@@ -27,7 +32,7 @@ TagManager:
   - IcePerfect
   - IceGood
   - IceBad
-  - 
+  - Ignore
   - 
   - 
   - 
