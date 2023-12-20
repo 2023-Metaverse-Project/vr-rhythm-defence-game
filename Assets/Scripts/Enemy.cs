@@ -144,13 +144,13 @@ public class Enemy : MonoBehaviour
         StopAllCoroutines();
         if (enemyType == attackType)
         {
-            Debug.Log("Critical" + enemyType + attackType);
+            //Debug.Log("Critical" + enemyType + attackType);
             StartCoroutine(HitCriticalEffect());
             DecreaseHP(multiplier * baseDamage);
         }
         else
         {
-            Debug.Log("Normal" + enemyType + attackType);
+            //Debug.Log("Normal" + enemyType + attackType);
             StartCoroutine(HitNormalEffect());
             DecreaseHP(baseDamage);
         }

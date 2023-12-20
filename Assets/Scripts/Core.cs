@@ -32,7 +32,7 @@ public class Core : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.ToString());
+        //Debug.Log(other.ToString());
         if (other.transform.CompareTag("MonsterBig"))
         {
             currentHP -= bigDamage;
@@ -43,7 +43,7 @@ public class Core : MonoBehaviour
         }
         else if (other.transform.CompareTag("MonsterSmall"))
         {
-            Debug.Log("Small");
+            //Debug.Log("Small");
             currentHP -= smallDamage;
         }
 

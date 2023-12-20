@@ -32,14 +32,10 @@ public class NotesManager : MonoBehaviour
 
         if (currentTime >= 60d / bpm)
         {
-            Debug.Log("LeftNote Dequeue Start");
             GameObject t_leftNote = ObjectPool.instance.leftNoteQueue.Dequeue();
-            Debug.Log("LeftNote Dequeue End");
             t_leftNote.transform.position = tfLeftNoteSpawn.transform.position;
             t_leftNote.SetActive(true);
-            Debug.Log("LeftNote Dequeue Start");
             GameObject t_rightNote = ObjectPool.instance.rightNoteQueue.Dequeue();
-            Debug.Log("LeftNote Dequeue End");
             t_rightNote.transform.position = tfRightNoteSpawn.transform.position;
             t_rightNote.SetActive(true);
 
@@ -55,15 +51,11 @@ public class NotesManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("面倒 惯积: " + collision.ToString());
+        //Debug.Log("面倒 惯积: " + collision.ToString());
         if (collision.CompareTag("LeftNote"))
         {
-            Debug.Log("LeftNote Start");
             theTimingManager.leftNoteList.Remove(collision.gameObject);
-            Debug.Log("End");
-
             ObjectPool.instance.leftNoteQueue.Enqueue(collision.gameObject);
-            Debug.Log("End2");
             // Destroy(collision.gameObject);
 
             collision.gameObject.SetActive(false);
@@ -71,11 +63,8 @@ public class NotesManager : MonoBehaviour
         }
         else if (collision.CompareTag("RightNote"))
         {
-            Debug.Log("RightNote Start");
             theTimingManager.rightNoteList.Remove(collision.gameObject);
-            Debug.Log("End");
             ObjectPool.instance.rightNoteQueue.Enqueue(collision.gameObject);
-            Debug.Log("End2");
 
             collision.gameObject.SetActive(false);
 

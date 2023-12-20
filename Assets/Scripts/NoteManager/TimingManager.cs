@@ -33,7 +33,7 @@ public class TimingManager : MonoBehaviour
         {
             timingBoxs[i].Set(tfLeftNoteFrame.localPosition.x - timingRect[i].rect.width / 2,
                               tfLeftNoteFrame.localPosition.x + timingRect[i].rect.width / 2);
-            Debug.Log(timingBoxs[i]);
+            //Debug.Log(timingBoxs[i]);
         }
     }
 
