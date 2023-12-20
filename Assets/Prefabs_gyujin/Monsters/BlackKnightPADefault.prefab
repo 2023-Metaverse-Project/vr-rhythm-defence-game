@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 6277588213433891401}
   - component: {fileID: 1840581849213738727}
   - component: {fileID: 1722429265590045711}
+  - component: {fileID: -7646927571807020102}
   m_Layer: 0
   m_Name: BlackKnightPADefault
   m_TagString: Untagged
@@ -325,6 +326,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  maxHP: 100
+--- !u!136 &-7646927571807020102
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614038612876350582}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.758227
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.87911355, z: 0}
 --- !u!1 &1110689958860207032
 GameObject:
   m_ObjectHideFlags: 0
