@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4558373647392080}
   - component: {fileID: 198942930537562780}
   - component: {fileID: 199177703634295818}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4909,7 +4909,7 @@ GameObject:
   - component: {fileID: 4258852727983060}
   - component: {fileID: 198888683747212012}
   - component: {fileID: 199241701711078778}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: SparkTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9808,7 +9808,7 @@ GameObject:
   - component: {fileID: 4758556236485166}
   - component: {fileID: 198203505136687920}
   - component: {fileID: 199230826133020674}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: FireballMuzzlePurple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14709,7 +14709,7 @@ GameObject:
   - component: {fileID: 4464560286024138}
   - component: {fileID: 198971177069589314}
   - component: {fileID: 199523689528138754}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19616,7 +19616,7 @@ GameObject:
   - component: {fileID: 4064194087250364}
   - component: {fileID: 198509383658028476}
   - component: {fileID: 199179997762444942}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24568,7 +24568,7 @@ GameObject:
   - component: {fileID: 4687732512376648}
   - component: {fileID: 198308866978269802}
   - component: {fileID: 199480437369827454}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Sparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29465,7 +29465,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4299855860071326}
   - component: {fileID: 114991924389045242}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: FireballPurple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29517,7 +29517,7 @@ GameObject:
   - component: {fileID: 4971291948888354}
   - component: {fileID: 198289153408677568}
   - component: {fileID: 199615910725333092}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34425,7 +34425,7 @@ GameObject:
   - component: {fileID: 198897275278425708}
   - component: {fileID: 199828707271609752}
   - component: {fileID: 114525424365643034}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: FireballExplosionPurple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39342,7 +39342,7 @@ GameObject:
   - component: {fileID: 4211552544568750}
   - component: {fileID: 198224673416434076}
   - component: {fileID: 199858582460733466}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: SphereGlow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44240,7 +44240,7 @@ GameObject:
   - component: {fileID: 4248093414374988}
   - component: {fileID: 198573604907480698}
   - component: {fileID: 199026589910978554}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: FireTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49148,7 +49148,7 @@ GameObject:
   - component: {fileID: 4764951900902534}
   - component: {fileID: 198876183086048448}
   - component: {fileID: 199887315916843534}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: SmokeTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54057,7 +54057,7 @@ GameObject:
   - component: {fileID: 3934153020738779825}
   - component: {fileID: 1719020330702541127}
   - component: {fileID: 8971339774461991789}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: FireballPerfect
   m_TagString: FireballPerfect
   m_Icon: {fileID: 0}

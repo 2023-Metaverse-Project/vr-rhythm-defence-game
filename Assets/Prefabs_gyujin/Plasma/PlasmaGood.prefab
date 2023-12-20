@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2562173181404933286}
   - component: {fileID: 8247743359406518789}
   - component: {fileID: 5083494368696643098}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PlasmaGood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -114,6 +114,22 @@ PrefabInstance:
     - target: {fileID: 1191624696711110, guid: 0cfd1e6f2227d1542ad3f306acf7ad4c, type: 3}
       propertyPath: m_Name
       value: PlasmaExplosionYellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1191624696711110, guid: 0cfd1e6f2227d1542ad3f306acf7ad4c, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1358021276875444, guid: 0cfd1e6f2227d1542ad3f306acf7ad4c, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462844219358440, guid: 0cfd1e6f2227d1542ad3f306acf7ad4c, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1516832910421930, guid: 0cfd1e6f2227d1542ad3f306acf7ad4c, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4453146262086124, guid: 0cfd1e6f2227d1542ad3f306acf7ad4c, type: 3}
       propertyPath: m_LocalScale.x
@@ -226,9 +242,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4374856626841454174}
     m_Modifications:
+    - target: {fileID: 1260754074586588, guid: fe1f49767f623f84187ad24f5d16786e, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1420335591456534, guid: fe1f49767f623f84187ad24f5d16786e, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 1636715201126238, guid: fe1f49767f623f84187ad24f5d16786e, type: 3}
       propertyPath: m_Name
       value: PlasmaMissileYellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636715201126238, guid: fe1f49767f623f84187ad24f5d16786e, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1688530418763544, guid: fe1f49767f623f84187ad24f5d16786e, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4062143969174882, guid: fe1f49767f623f84187ad24f5d16786e, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -364,6 +396,18 @@ PrefabInstance:
     - target: {fileID: 1675971964201354, guid: 954b3d249b3cbf343bde9521d2b27cbe, type: 3}
       propertyPath: m_Name
       value: PlasmaMuzzleYellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1675971964201354, guid: 954b3d249b3cbf343bde9521d2b27cbe, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1682228114219962, guid: 954b3d249b3cbf343bde9521d2b27cbe, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756075689562978, guid: 954b3d249b3cbf343bde9521d2b27cbe, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4005409116954706, guid: 954b3d249b3cbf343bde9521d2b27cbe, type: 3}
       propertyPath: m_LocalScale.x

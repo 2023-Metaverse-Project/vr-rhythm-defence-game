@@ -7,10 +7,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    private NavMeshAgent agent;
-
-    [SerializeField]
-    private Transform target;
+    private NavMeshAgent agent; 
 
     [SerializeField]
     private float maxHP = 100;
@@ -40,7 +37,7 @@ public class Enemy : MonoBehaviour
     {
         NavMeshAgent agent = GetComponent<NavMeshAgent>();
 
-        agent.SetDestination(target.position);
+        agent.SetDestination(new Vector3(-3, 8, -124));
         agent.speed *= Random.Range(0.8f, 1.5f);
 
         currentHP = maxHP;
@@ -65,7 +62,7 @@ public class Enemy : MonoBehaviour
     private IEnumerator HitNormalEffect()
     {
         Color originalColor = skinnedMeshRenderer.material.color;
-        skinnedMeshRenderer.material.color = Color.white;
+        skinnedMeshRenderer.material.color = Color.yellow;
         yield return new WaitForSeconds(0.2f);
         skinnedMeshRenderer.material.color = originalColor;
     }
@@ -84,47 +81,47 @@ public class Enemy : MonoBehaviour
         float baseDamage = fireballBadDamage;
 
 
-        if (collision.transform.CompareTag("FireballPerfect"))
+        if (collision.gameObject.layer ==  LayerMask.NameToLayer("FireballPerfect"))
         {
             attackType = Skill.Fireball;
             baseDamage = fireballPerfectDamage;
         }
-        else if (collision.transform.CompareTag("FireballGood"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("FireballGood"))
         {
             attackType = Skill.Fireball;
             baseDamage = fireballGoodDamage;
         }
-        else if (collision.transform.CompareTag("FireballBad"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("FireballBad"))
         {
             attackType = Skill.Fireball;
             baseDamage = fireballBadDamage;
         }
-        else if (collision.transform.CompareTag("PlasmaPerfect"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("PlasmaPerfect"))
         {
             attackType = Skill.Plasma;
             baseDamage = plasmaPerfectDamage;
         }
-        else if (collision.transform.CompareTag("PlasmaGood"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("PlasmaGood"))
         {
             attackType = Skill.Plasma;
             baseDamage = plasmaGoodDamage;
         }
-        else if (collision.transform.CompareTag("PlasmaBad"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("PlasmaBad"))
         {
             attackType = Skill.Plasma;
             baseDamage = plasmaBadDamage;
         }
-        else if (collision.transform.CompareTag("IcePerfect"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("IcePerfect"))
         {
             attackType = Skill.Ice;
             baseDamage = icePerfectDamage;
         }
-        else if (collision.transform.CompareTag("IceGood"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("IceGood"))
         {
             attackType = Skill.Ice;
             baseDamage = iceGoodDamage;
         }
-        else if (collision.transform.CompareTag("IceBad"))
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("IceBad"))
         {
             attackType = Skill.Ice;
             baseDamage = iceBadDamage;

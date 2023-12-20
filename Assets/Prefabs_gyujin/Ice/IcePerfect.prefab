@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 751436966414362395}
   - component: {fileID: 370185784731685037}
   - component: {fileID: 6935984897836442600}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: IcePerfect
   m_TagString: IcePerfect
   m_Icon: {fileID: 0}
@@ -115,6 +115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: IceBigExplosion
       objectReference: {fileID: 0}
+    - target: {fileID: 1944020486928733632, guid: 8552d32b513b77347afa9c6a68fcc6ec, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 2050879412228153148, guid: 8552d32b513b77347afa9c6a68fcc6ec, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -123,13 +127,25 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3619746292673095946, guid: 8552d32b513b77347afa9c6a68fcc6ec, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 3808419851534760107, guid: 8552d32b513b77347afa9c6a68fcc6ec, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4626433496282186081, guid: 8552d32b513b77347afa9c6a68fcc6ec, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 6091459766046979322, guid: 8552d32b513b77347afa9c6a68fcc6ec, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640648778135329773, guid: 8552d32b513b77347afa9c6a68fcc6ec, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 9008214907204258642, guid: 8552d32b513b77347afa9c6a68fcc6ec, type: 3}
       propertyPath: m_LocalScale.x
@@ -210,9 +226,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6033439573882552084}
     m_Modifications:
+    - target: {fileID: 1419424297249570, guid: 1ab21f1ce561cfe46bb8e0c9aa39284c, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471158888659414, guid: 1ab21f1ce561cfe46bb8e0c9aa39284c, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 1785068816427774, guid: 1ab21f1ce561cfe46bb8e0c9aa39284c, type: 3}
       propertyPath: m_Name
       value: IceMuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785068816427774, guid: 1ab21f1ce561cfe46bb8e0c9aa39284c, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4581115348621078, guid: 1ab21f1ce561cfe46bb8e0c9aa39284c, type: 3}
       propertyPath: m_LocalScale.x
@@ -377,13 +405,29 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4266046204859286285, guid: 70c64294021a4dd48b7e4401c85abbce, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 4266197911013094007, guid: 70c64294021a4dd48b7e4401c85abbce, type: 3}
       propertyPath: m_Name
       value: IceMissileBig
       objectReference: {fileID: 0}
+    - target: {fileID: 4266197911013094007, guid: 70c64294021a4dd48b7e4401c85abbce, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266435043461763167, guid: 70c64294021a4dd48b7e4401c85abbce, type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 4266435043461763167, guid: 70c64294021a4dd48b7e4401c85abbce, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4266465403671556431, guid: 70c64294021a4dd48b7e4401c85abbce, type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

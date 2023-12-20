@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6917997536063046024}
   - component: {fileID: 2174898712129006915}
   - component: {fileID: 7771892404509990532}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: IceGood
   m_TagString: IceGood
   m_Icon: {fileID: 0}
@@ -111,9 +111,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8993563281075217848}
     m_Modifications:
+    - target: {fileID: 1196636205391250, guid: a17347c42dfc98c4b861a7e41a444d6f, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1490749762035822, guid: a17347c42dfc98c4b861a7e41a444d6f, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1497584439982096, guid: a17347c42dfc98c4b861a7e41a444d6f, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1510452662759636, guid: a17347c42dfc98c4b861a7e41a444d6f, type: 3}
       propertyPath: m_Name
       value: IceExplosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1510452662759636, guid: a17347c42dfc98c4b861a7e41a444d6f, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558564245870644, guid: a17347c42dfc98c4b861a7e41a444d6f, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4534549780799418, guid: a17347c42dfc98c4b861a7e41a444d6f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -202,13 +222,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8993563281075217848}
     m_Modifications:
+    - target: {fileID: 1148351829394104, guid: 112f3db1547c11e4fadfba32f6df1cec, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1278067673019330, guid: 112f3db1547c11e4fadfba32f6df1cec, type: 3}
       propertyPath: m_Name
       value: IceMissile
       objectReference: {fileID: 0}
+    - target: {fileID: 1278067673019330, guid: 112f3db1547c11e4fadfba32f6df1cec, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532794438537706, guid: 112f3db1547c11e4fadfba32f6df1cec, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1532794438537706, guid: 112f3db1547c11e4fadfba32f6df1cec, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576351018709242, guid: 112f3db1547c11e4fadfba32f6df1cec, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4743200706115866, guid: 112f3db1547c11e4fadfba32f6df1cec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -289,9 +325,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8993563281075217848}
     m_Modifications:
+    - target: {fileID: 1419424297249570, guid: 1ab21f1ce561cfe46bb8e0c9aa39284c, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1471158888659414, guid: 1ab21f1ce561cfe46bb8e0c9aa39284c, type: 3}
+      propertyPath: m_Layer
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1785068816427774, guid: 1ab21f1ce561cfe46bb8e0c9aa39284c, type: 3}
       propertyPath: m_Name
       value: IceMuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1785068816427774, guid: 1ab21f1ce561cfe46bb8e0c9aa39284c, type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4581115348621078, guid: 1ab21f1ce561cfe46bb8e0c9aa39284c, type: 3}
       propertyPath: m_LocalPosition.x

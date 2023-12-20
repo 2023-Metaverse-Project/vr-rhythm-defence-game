@@ -24,15 +24,15 @@ TagManager:
   - UI
   - World
   - Attack
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - FireballPerfect
+  - FireballGood
+  - FireballBad
+  - PlasmaPerfect
+  - PlasmaGood
+  - PlasmaBad
+  - IcePerfect
+  - IceGood
+  - IceBad
   - 
   - 
   - 

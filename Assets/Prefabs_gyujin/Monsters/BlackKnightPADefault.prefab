@@ -328,17 +328,17 @@ MonoBehaviour:
   target: {fileID: 0}
   maxHP: 100
   skinnedMeshRenderer: {fileID: 1184222674320758106}
-  fireballPerfectDamage: 0
-  fireballGoodDamage: 0
-  fireballBadDamage: 0
-  plasmaPerfectDamage: 0
-  plasmaGoodDamage: 0
-  plasmaBadDamage: 0
-  icePerfectDamage: 0
-  iceGoodDamage: 0
-  iceBadDamage: 0
-  EnemyType: 0
-  multiplier: 0
+  fireballPerfectDamage: 50
+  fireballGoodDamage: 20
+  fireballBadDamage: 10
+  plasmaPerfectDamage: 50
+  plasmaGoodDamage: 20
+  plasmaBadDamage: 10
+  icePerfectDamage: 50
+  iceGoodDamage: 20
+  iceBadDamage: 10
+  enemyType: 0
+  multiplier: 2
 --- !u!136 &-7646927571807020102
 CapsuleCollider:
   m_ObjectHideFlags: 0

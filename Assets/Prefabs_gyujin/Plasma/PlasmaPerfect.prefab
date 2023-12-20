@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3382731361092361441}
   - component: {fileID: 1809724966896524574}
   - component: {fileID: 4672434714509410993}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlasmaPerfect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,9 +111,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4699677155430039992}
     m_Modifications:
+    - target: {fileID: 1371765166547102, guid: 58e39ded56e8b1a47b7035be3cad890a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1755289559938196, guid: 58e39ded56e8b1a47b7035be3cad890a, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1970972249526710, guid: 58e39ded56e8b1a47b7035be3cad890a, type: 3}
       propertyPath: m_Name
       value: PlasmaMuzzleBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970972249526710, guid: 58e39ded56e8b1a47b7035be3cad890a, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4062019639454976, guid: 58e39ded56e8b1a47b7035be3cad890a, type: 3}
       propertyPath: m_LocalScale.x
@@ -206,9 +218,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4699677155430039992}
     m_Modifications:
+    - target: {fileID: 1554361905656444, guid: f67ceb233ad516f4d94d9c2552d5fa6b, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1653350541977220, guid: f67ceb233ad516f4d94d9c2552d5fa6b, type: 3}
       propertyPath: m_Name
       value: PlasmaMissileBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653350541977220, guid: f67ceb233ad516f4d94d9c2552d5fa6b, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1732999336831890, guid: f67ceb233ad516f4d94d9c2552d5fa6b, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1754618823685226, guid: f67ceb233ad516f4d94d9c2552d5fa6b, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4022810940229596, guid: f67ceb233ad516f4d94d9c2552d5fa6b, type: 3}
       propertyPath: m_LocalScale.x
@@ -305,9 +333,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4699677155430039992}
     m_Modifications:
+    - target: {fileID: 1068720566685302, guid: f912532b5710eb6429ad86a7083557cd, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207308304876718, guid: f912532b5710eb6429ad86a7083557cd, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 1503859245115456, guid: f912532b5710eb6429ad86a7083557cd, type: 3}
       propertyPath: m_Name
       value: PlasmaExplosionBlue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1503859245115456, guid: f912532b5710eb6429ad86a7083557cd, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1857656972346818, guid: f912532b5710eb6429ad86a7083557cd, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4860067674400460, guid: f912532b5710eb6429ad86a7083557cd, type: 3}
       propertyPath: m_LocalScale.x
