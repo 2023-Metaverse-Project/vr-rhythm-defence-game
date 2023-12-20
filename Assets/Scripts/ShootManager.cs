@@ -31,8 +31,11 @@ public class ShootManager : MonoBehaviour
     private List<GameObject> FireballPrefabs = new List<GameObject>();
     [SerializeField]
     private List<GameObject> ThunderPrefabs = new List<GameObject>();
-    
 
+    private void Update()
+    {
+        Shoot();
+    }
     public void Shoot()
     {
         switch (timing)
@@ -54,7 +57,7 @@ public class ShootManager : MonoBehaviour
                 break;
         }
 
-        //timing = PressTiming.Pass;
+        timing = PressTiming.Pass;
     }
 
     public void SetTiming(PressTiming pressTiming)

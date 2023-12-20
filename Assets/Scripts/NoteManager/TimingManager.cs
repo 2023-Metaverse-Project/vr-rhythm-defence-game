@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TimingManager : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class TimingManager : MonoBehaviour
     ParticleSystem[] leftEffectList = null;
     [SerializeField]
     ParticleSystem[] rightEffectList = null;
+
+    [SerializeField]
+    private UnityEvent<PressTiming> onTimingChecked;
 
     void Start()
     {
@@ -55,6 +59,24 @@ public class TimingManager : MonoBehaviour
                     rightEffectList[x].Play();
 
                     Debug.Log("Hit" + x);
+
+
+                    switch (x)
+                    {
+                        case 0: // Perfect
+                            onTimingChecked?.Invoke(PressTiming.Perfect);
+                            break;
+
+                        case 1: // Good
+                            onTimingChecked?.Invoke(PressTiming.Good);
+                            break;
+
+                        case 2: // Bad
+                            onTimingChecked?.Invoke(PressTiming.Bad);
+                            break;
+                    }
+
+
                     return;
                 }
             }
@@ -62,6 +84,8 @@ public class TimingManager : MonoBehaviour
 
         leftEffectList[3].Play();
         rightEffectList[3].Play();
+
+        onTimingChecked?.Invoke(PressTiming.Miss);
         Debug.Log("Miss");
     }    
 }

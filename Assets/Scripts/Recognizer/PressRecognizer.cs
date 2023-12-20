@@ -14,8 +14,6 @@ public class PressRecognizer : MonoBehaviour
     [SerializeField]
     private InputHelpers.Button inputButton;    
     [SerializeField]
-    private Transform movementSource;
-    [SerializeField]
     public float pressRate = 0.2f;
 
     private float inputThreshold = 0.1f;
