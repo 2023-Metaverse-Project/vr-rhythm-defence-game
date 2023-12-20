@@ -363,9 +363,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 298408331}
     m_Modifications:
+    - target: {fileID: 103038, guid: 1b1f4eecb848b384f93fd0216a95f56e, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 148832, guid: 1b1f4eecb848b384f93fd0216a95f56e, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 157624, guid: 1b1f4eecb848b384f93fd0216a95f56e, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 160900, guid: 1b1f4eecb848b384f93fd0216a95f56e, type: 3}
       propertyPath: m_Name
       value: LightningExplosionYellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 160900, guid: 1b1f4eecb848b384f93fd0216a95f56e, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 186750, guid: 1b1f4eecb848b384f93fd0216a95f56e, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 416420, guid: 1b1f4eecb848b384f93fd0216a95f56e, type: 3}
       propertyPath: m_LocalScale.x
@@ -616,6 +636,26 @@ PrefabInstance:
     - target: {fileID: 130848, guid: d16221e794fe16e4e8994a7f8c770561, type: 3}
       propertyPath: m_Name
       value: ExplosionFireballFire
+      objectReference: {fileID: 0}
+    - target: {fileID: 130848, guid: d16221e794fe16e4e8994a7f8c770561, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 134072, guid: d16221e794fe16e4e8994a7f8c770561, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 147980, guid: d16221e794fe16e4e8994a7f8c770561, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 158376, guid: d16221e794fe16e4e8994a7f8c770561, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 160772, guid: d16221e794fe16e4e8994a7f8c770561, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 406126, guid: d16221e794fe16e4e8994a7f8c770561, type: 3}
       propertyPath: m_LocalScale.x
@@ -933,7 +973,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 298408331}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: ChangeEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1903,9 +1943,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 298408331}
     m_Modifications:
+    - target: {fileID: 1256673527671802, guid: d24d32ae7abae424080a26044bf04ea0, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313448941174796, guid: d24d32ae7abae424080a26044bf04ea0, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613455872463394, guid: d24d32ae7abae424080a26044bf04ea0, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 1664354186237286, guid: d24d32ae7abae424080a26044bf04ea0, type: 3}
       propertyPath: m_Name
       value: SnowExplosion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1664354186237286, guid: d24d32ae7abae424080a26044bf04ea0, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 4395352164578250, guid: d24d32ae7abae424080a26044bf04ea0, type: 3}
       propertyPath: m_LocalScale.x
@@ -2499,6 +2555,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4333171371153720777, guid: ef3fb4ec25fc42640b1bc6f87aa524d7, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 4501807372880468138, guid: ef3fb4ec25fc42640b1bc6f87aa524d7, type: 3}
       propertyPath: m_LineOriginTransform
       value: 
@@ -2543,13 +2603,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5972493936352906683, guid: ef3fb4ec25fc42640b1bc6f87aa524d7, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6172867213469866083, guid: ef3fb4ec25fc42640b1bc6f87aa524d7, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
     - target: {fileID: 7635587036909092773, guid: ef3fb4ec25fc42640b1bc6f87aa524d7, type: 3}
       propertyPath: m_Name
       value: XR Origin (XR Rig)
       objectReference: {fileID: 0}
     - target: {fileID: 7635587036909092773, guid: ef3fb4ec25fc42640b1bc6f87aa524d7, type: 3}
+      propertyPath: m_Layer
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7635587036909092773, guid: ef3fb4ec25fc42640b1bc6f87aa524d7, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643026169895168479, guid: ef3fb4ec25fc42640b1bc6f87aa524d7, type: 3}
+      propertyPath: m_Layer
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
