@@ -121,8 +121,10 @@ public class GestureRecognizer : MonoBehaviour
                 // 스킬 결정 후 정보 전달
                 if (result.GestureClass == "Fireball")
                     OnChangeSkill?.Invoke(Skill.Fireball);
-                else if (result.GestureClass == "Thunder")
-                    OnChangeSkill?.Invoke(Skill.Thunder);
+                else if (result.GestureClass == "Plasma")
+                    OnChangeSkill?.Invoke(Skill.Plasma);
+                else if (result.GestureClass == "Ice")
+                    OnChangeSkill?.Invoke(Skill.Ice);
             }
             else
             {

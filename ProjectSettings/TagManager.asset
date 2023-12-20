@@ -6,6 +6,15 @@ TagManager:
   tags:
   - LeftNote
   - RightNote
+  - FireballPerfect
+  - FireballGood
+  - FireballBad
+  - PlasmaPerfect
+  - PlasmaGood
+  - PlasmaBad
+  - IcePerfect
+  - IceGood
+  - IceBad
   layers:
   - Default
   - TransparentFX
@@ -14,7 +23,7 @@ TagManager:
   - Water
   - UI
   - World
-  - 
+  - Attack
   - 
   - 
   - 

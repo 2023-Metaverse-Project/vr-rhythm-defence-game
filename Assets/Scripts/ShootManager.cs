@@ -12,7 +12,6 @@ public class ShootManager : MonoBehaviour
 {
     [Header("Points")]
     public GameObject startPoint;
-    public GameObject endPoint;
     public GameObject handPoint;
     public float maxDistance;
     public GameObject XROrigin;
@@ -30,7 +29,9 @@ public class ShootManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> FireballPrefabs = new List<GameObject>();
     [SerializeField]
-    private List<GameObject> ThunderPrefabs = new List<GameObject>();
+    private List<GameObject> PlasmaPrefabs = new List<GameObject>();
+    [SerializeField]
+    private List<GameObject> IcePrefabs = new List<GameObject>();
 
     private void Update()
     {
@@ -88,18 +89,6 @@ public class ShootManager : MonoBehaviour
         ShootProjectileHandForward();
     }
 
-    private void ShootProjectileStartEnd()
-    {
-        Vector3 spawnPosition = startPoint.transform.position;
-        GameObject projectile = InstantiateSkillPrefab(spawnPosition);
-
-
-
-        Vector3 direction = (endPoint.transform.position - startPoint.transform.position).normalized;
-        projectile.transform.LookAt(spawnPosition + direction * 10f);
-        projectile.GetComponent<Rigidbody>().AddForce(direction * missileSpeed);
-    }
-
     private void ShootProjectileHandForward()
     {
         Vector3 handPosition = handPoint.transform.position;
@@ -135,9 +124,13 @@ public class ShootManager : MonoBehaviour
         {
             projectile = Instantiate(FireballPrefabs[(int)timing], spawnPosition, Quaternion.identity);
         }
-        else if (skill == Skill.Thunder)
+        else if (skill == Skill.Plasma)
         {
-            projectile = Instantiate(ThunderPrefabs[(int)timing], spawnPosition, Quaternion.identity);
+            projectile = Instantiate(PlasmaPrefabs[(int)timing], spawnPosition, Quaternion.identity);
+        }
+        else if (skill == Skill.Ice)
+        {
+            projectile = Instantiate(IcePrefabs[(int)timing], spawnPosition, Quaternion.identity);
         }
 
         return projectile;

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2895232593907865202}
   - component: {fileID: 7075494988108726432}
   - component: {fileID: 565235094246259101}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FireballGood
-  m_TagString: Untagged
+  m_TagString: FireballGood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,9 +111,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1978469340222690751}
     m_Modifications:
+    - target: {fileID: 1147022872980752, guid: 8c988011ae9fc604a8a3761a0ac3d8a8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1251721777823268, guid: 8c988011ae9fc604a8a3761a0ac3d8a8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501599223710028, guid: 8c988011ae9fc604a8a3761a0ac3d8a8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1879798220002124, guid: 8c988011ae9fc604a8a3761a0ac3d8a8, type: 3}
       propertyPath: m_Name
       value: FireballExplosionRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879798220002124, guid: 8c988011ae9fc604a8a3761a0ac3d8a8, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4434374915138438, guid: 8c988011ae9fc604a8a3761a0ac3d8a8, type: 3}
       propertyPath: m_LocalScale.x
@@ -222,9 +238,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1978469340222690751}
     m_Modifications:
+    - target: {fileID: 1017671236040816, guid: 443566c1d553c524ba2b591f0c9c3ce8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211827500474480, guid: 443566c1d553c524ba2b591f0c9c3ce8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891359047711734, guid: 443566c1d553c524ba2b591f0c9c3ce8, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 1977975570158332, guid: 443566c1d553c524ba2b591f0c9c3ce8, type: 3}
       propertyPath: m_Name
       value: FireballMuzzleRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977975570158332, guid: 443566c1d553c524ba2b591f0c9c3ce8, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4306121848497116, guid: 443566c1d553c524ba2b591f0c9c3ce8, type: 3}
       propertyPath: m_LocalScale.x
@@ -368,6 +400,22 @@ PrefabInstance:
     - target: {fileID: 1006269644436722, guid: 8241db815e240fa408297a3015a6db53, type: 3}
       propertyPath: m_Name
       value: FireballRed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1006269644436722, guid: 8241db815e240fa408297a3015a6db53, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418886582916154, guid: 8241db815e240fa408297a3015a6db53, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534166139631254, guid: 8241db815e240fa408297a3015a6db53, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1870774096287004, guid: 8241db815e240fa408297a3015a6db53, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4866859738511908, guid: 8241db815e240fa408297a3015a6db53, type: 3}
       propertyPath: m_LocalScale.x

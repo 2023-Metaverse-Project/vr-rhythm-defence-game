@@ -1,1 +1,1 @@
-public enum Skill { Fireball = 0, Thunder }
+public enum Skill { Fireball = 0, Plasma, Ice }
