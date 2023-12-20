@@ -30,26 +30,27 @@ public class Core : MonoBehaviour
         textHP.text = currentHP.ToString() + "/" + MaxHP.ToString();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(collision.gameObject.name);
-        if (collision.transform.CompareTag("MonsterBig"))
+        Debug.Log(other.ToString());
+        if (other.transform.CompareTag("MonsterBig"))
         {
             currentHP -= bigDamage;
         }
-        else if (collision.transform.CompareTag("MonsterMiddle"))
+        else if (other.transform.CompareTag("MonsterMiddle"))
         {
             currentHP -= middleDamage;
         }
-        else if (collision.transform.CompareTag("MonsterSmall"))
+        else if (other.transform.CompareTag("MonsterSmall"))
         {
             Debug.Log("Small");
             currentHP -= smallDamage;
         }
 
-        collision.transform.GetComponent<Enemy>().Die();
+        other.transform.GetComponent<Enemy>().Die();
 
         if (currentHP < 0)
             onGameover?.Invoke();
     }
+
 }

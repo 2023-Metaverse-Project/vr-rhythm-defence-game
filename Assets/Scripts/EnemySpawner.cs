@@ -11,8 +11,6 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private float startFactor = 1;
     [SerializeField]
-    private float additiveFactor = 0.1f;
-    [SerializeField]
     private float delayPerSpawnGroup = 3;
 
     private void Awake()
@@ -43,7 +41,6 @@ public class EnemySpawner : MonoBehaviour
 
             yield return StartCoroutine(SpawnEnemy(factor));
 
-            factor += additiveFactor;
             delayPerSpawnGroup = Mathf.Clamp(Random.Range(delayPerSpawnGroup - delayPerSpawnGroup / 2, delayPerSpawnGroup + delayPerSpawnGroup / 2),
                                 1f, 5f);
         }
