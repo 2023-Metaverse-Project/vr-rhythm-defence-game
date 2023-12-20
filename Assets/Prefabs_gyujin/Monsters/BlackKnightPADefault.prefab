@@ -327,6 +327,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   maxHP: 100
+  skinnedMeshRenderer: {fileID: 1184222674320758106}
+  fireballPerfectDamage: 0
+  fireballGoodDamage: 0
+  fireballBadDamage: 0
+  plasmaPerfectDamage: 0
+  plasmaGoodDamage: 0
+  plasmaBadDamage: 0
+  icePerfectDamage: 0
+  iceGoodDamage: 0
+  iceBadDamage: 0
+  EnemyType: 0
+  multiplier: 0
 --- !u!136 &-7646927571807020102
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -346,10 +358,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2.758227
+  m_Radius: 1.031102
+  m_Height: 2.1910267
   m_Direction: 1
-  m_Center: {x: 0, y: 0.87911355, z: 0}
+  m_Center: {x: -0.017189264, y: 1.1627138, z: 0}
 --- !u!1 &1110689958860207032
 GameObject:
   m_ObjectHideFlags: 0

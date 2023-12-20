@@ -942,7 +942,7 @@ MonoBehaviour:
   enemyPrefab: {fileID: 447591922}
   isPlayOnStart: 1
   startFactor: 1
-  additiveFactor: 0.1
+  additiveFactor: 0
   delayPerSpawnGroup: 3
 --- !u!1001 &588297409
 PrefabInstance:

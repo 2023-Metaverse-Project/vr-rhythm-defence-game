@@ -102,13 +102,12 @@ public class ShootManager : MonoBehaviour
     private void ShootProjectileStartTarget()
     {
         Vector3 spawnPosition = startPoint.transform.position;
-        Vector3 handPosition = handPoint.transform.position;
         GameObject projectile = InstantiateSkillPrefab(spawnPosition);
 
         Vector3 targetPosition = new Vector3(XROrigin.transform.position.x, XROrigin.transform.position.y - 50, XROrigin.transform.position.z);
         if (Physics.Raycast(handPoint.transform.position, handPoint.transform.forward, out RaycastHit hitInfo, maxDistance))
         {
-            targetPosition = hitInfo.transform.position;
+            targetPosition = hitInfo.transform.position + hitInfo.transform.forward.normalized * 1f;
         }
 
 

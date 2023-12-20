@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
     private float currentHP;
 
     [Header("Damages")]
+    public SkinnedMeshRenderer skinnedMeshRenderer;
+
     public float fireballPerfectDamage;
     public float fireballGoodDamage;
     public float fireballBadDamage;
@@ -30,7 +32,7 @@ public class Enemy : MonoBehaviour
     public float iceBadDamage;
 
     [Header("Enemy Attack Type")]
-    public Skill EnemyType;
+    public Skill enemyType;
     public float multiplier;
 
 
@@ -58,6 +60,22 @@ public class Enemy : MonoBehaviour
     {
         if (gameObject != null)
             Destroy(gameObject);
+    }
+
+    private IEnumerator HitNormalEffect()
+    {
+        Color originalColor = skinnedMeshRenderer.material.color;
+        skinnedMeshRenderer.material.color = Color.white;
+        yield return new WaitForSeconds(0.2f);
+        skinnedMeshRenderer.material.color = originalColor;
+    }
+
+    private IEnumerator HitCriticalEffect()
+    {
+        Color originalColor = skinnedMeshRenderer.material.color;
+        skinnedMeshRenderer.material.color = Color.red;
+        yield return new WaitForSeconds(0.2f);
+        skinnedMeshRenderer.material.color = originalColor;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -112,13 +130,17 @@ public class Enemy : MonoBehaviour
             baseDamage = iceBadDamage;
         }
 
-
-        if (EnemyType == attackType)
+        StopAllCoroutines();
+        if (enemyType == attackType)
         {
+            Debug.Log("Critical" + enemyType + attackType);
+            StartCoroutine(HitCriticalEffect());
             DecreaseHP(multiplier * baseDamage);
         }
         else
         {
+            Debug.Log("Normal" + enemyType + attackType);
+            StartCoroutine(HitNormalEffect());
             DecreaseHP(baseDamage);
         }
     }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7771892404509990532}
   m_Layer: 0
   m_Name: IceGood
-  m_TagString: Untagged
+  m_TagString: IceGood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,6 +154,10 @@ PrefabInstance:
     - target: {fileID: 4534549780799418, guid: a17347c42dfc98c4b861a7e41a444d6f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4534549780799418, guid: a17347c42dfc98c4b861a7e41a444d6f, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 199097834513513878, guid: a17347c42dfc98c4b861a7e41a444d6f, type: 3}
       propertyPath: m_Materials.Array.size
