@@ -7,7 +7,7 @@ public class TimingManager : MonoBehaviour
 {
     // 왼쪽 노트를 기준으로 판정을 하자
 
-    public List<GameObject> boxNoteList = new List<GameObject>(); // 판정 범위에 있는지 모든 노트를 비교해야 함
+    public List<GameObject> leftNoteList = new List<GameObject>(); // 판정 범위에 있는지 모든 노트를 비교해야 함
     public List<GameObject> rightNoteList = new List<GameObject>(); // 오른 쪽 노트 관리(생성 및 제거)를 위함.
 
     [SerializeField]
@@ -39,17 +39,17 @@ public class TimingManager : MonoBehaviour
 
     public void CheckTiming()
     {
-        for (int i = 0; i < boxNoteList.Count; i++)
+        for (int i = 0; i < leftNoteList.Count; i++)
         {
-            float t_notePosX = boxNoteList[i].transform.localPosition.x;
+            float t_notePosX = leftNoteList[i].transform.localPosition.x;
 
             for(int x = 0; x < timingBoxs.Length; x++)
             {
                 if (timingBoxs[x].x <= t_notePosX && t_notePosX <= timingBoxs[x].y)
                 {
                     //Destroy(boxNoteList[i]);
-                    boxNoteList[i].GetComponent<LeftNote>().HideNote();
-                    boxNoteList.RemoveAt(i);
+                    leftNoteList[i].GetComponent<LeftNote>().HideNote();
+                    leftNoteList.RemoveAt(i);
 
                     //Destroy(rightNoteList[i]);
                     rightNoteList[i].GetComponent<RightNote>().HideNote();
