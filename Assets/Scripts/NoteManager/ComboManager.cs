@@ -13,6 +13,9 @@ public class ComboManager : MonoBehaviour
 
     int currentCombo;
 
+    [SerializeField] Animator comboAnimator = null;
+    [SerializeField] Animator comboTextAnimator = null;
+
     [SerializeField]
     private UnityEvent<int> onComboAchieve;
 
@@ -31,6 +34,8 @@ public class ComboManager : MonoBehaviour
         {
             textCombo.gameObject.SetActive(true);
             goComboImage.SetActive(true);
+            comboAnimator?.SetTrigger("Hit");
+            comboTextAnimator?.SetTrigger("Hit");
         }
 
         // combo 를 10번 달성 시 마다 onComboAchieve 이벤트 발생
@@ -53,4 +58,9 @@ public class ComboManager : MonoBehaviour
         textCombo.gameObject.SetActive(false);
         goComboImage.SetActive(false);
     }
+
+    //public void ComboEffect()
+    //{
+    //    comboAnimator.SetTrigger("Hit");
+    //}
 }
