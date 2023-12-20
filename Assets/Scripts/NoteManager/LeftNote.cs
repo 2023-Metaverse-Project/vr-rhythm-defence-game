@@ -21,6 +21,11 @@ public class LeftNote : MonoBehaviour
         noteImage.enabled = false;
     }
 
+    public bool getNoteImageEnabled()
+    {
+        return noteImage.enabled;
+    }
+
     private void Update()
     {
         transform.localPosition += Vector3.right * noteSpeed * Time.deltaTime;

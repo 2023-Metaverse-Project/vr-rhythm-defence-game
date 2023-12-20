@@ -25,8 +25,13 @@ public class TimingManager : MonoBehaviour
     [SerializeField]
     private UnityEvent<PressTiming> onTimingChecked;
 
+    ComboManager comboManager;
+
     void Start()
     {
+        // Combo Manager 참조할 수 있게!
+        comboManager = FindObjectOfType<ComboManager>();
+
         // 타이밍 박스 설정
         timingBoxs = new Vector2[timingRect.Length];
         for (int i = 0; i < timingRect.Length; i++)
@@ -58,21 +63,24 @@ public class TimingManager : MonoBehaviour
                     leftEffectList[x].Play();
                     rightEffectList[x].Play();
 
-                    Debug.Log("Hit" + x);
+                    //Debug.Log("Hit" + x);
 
 
                     switch (x)
                     {
                         case 0: // Perfect
                             onTimingChecked?.Invoke(PressTiming.Perfect);
+                            comboManager.IncreaseCombo(); // 콤보 증가
                             break;
 
                         case 1: // Good
                             onTimingChecked?.Invoke(PressTiming.Good);
+                            comboManager.IncreaseCombo(); // 콤보 증가
                             break;
 
                         case 2: // Bad
                             onTimingChecked?.Invoke(PressTiming.Bad);
+                            comboManager.ResetCombo();
                             break;
                     }
 
@@ -86,6 +94,7 @@ public class TimingManager : MonoBehaviour
         rightEffectList[3].Play();
 
         onTimingChecked?.Invoke(PressTiming.Miss);
-        Debug.Log("Miss");
+        comboManager.ResetCombo();
+        //Debug.Log("Miss");
     }    
 }
