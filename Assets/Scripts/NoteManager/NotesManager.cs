@@ -53,7 +53,7 @@ public class NotesManager : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         Debug.Log("충돌 발생: " + collision.ToString());
         if (collision.CompareTag("LeftNote"))
