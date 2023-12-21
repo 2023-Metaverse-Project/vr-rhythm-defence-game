@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
 using UnityEngine.Events;
+using TMPro;
+using Unity.VisualScripting;
 
 public enum GameStopType {GAMEOVER=0, GAMECLEAR}
 
@@ -18,16 +20,24 @@ public class GameManager : MonoBehaviour
     private InputHelpers.Button QuitButton;
     [SerializeField]
     private InputHelpers.Button RestartButton;
+    [SerializeField]
+    private InputHelpers.Button RightButton;
+    [SerializeField]
+    private InputHelpers.Button LeftButton;
 
     private float inputThreshold = 0.1f;
 
     private bool canPress = true;
+
+    private Music[] musicList = null;
+    private int currentMusicIndex = 0;
 
     [Header("UI")]
     public GameObject menuUI;
     public GameObject gamingUI;
     public GameObject gameoverUI;
     public GameObject gameclearUI;
+    public TextMeshProUGUI textMusicName;
 
     [Header("Managing Objects")]
     public GameObject note;
@@ -38,6 +48,11 @@ public class GameManager : MonoBehaviour
     public GameObject comboManager;
     public GameObject gameClearChecker;
     public List<GameObject> spawnPoints;
+
+    private void Start()
+    {
+        musicList = audioManager?.GetComponent<AudioManager>().GetMusicList();
+    }
 
     // Update is called once per frame
     void Update()
@@ -64,7 +79,43 @@ public class GameManager : MonoBehaviour
             {
                 RestartGame();
             }
+
+            InputHelpers.IsPressed(InputDevices.GetDeviceAtXRNode(inputSource), LeftButton, out bool isLeftPressed, inputThreshold);
+            InputHelpers.IsPressed(InputDevices.GetDeviceAtXRNode(inputSource), RightButton, out bool isRightPressed, inputThreshold);
+
+            if (isLeftPressed)
+            {
+                currentMusicIndex = audioManager.GetComponent<AudioManager>().GetMusicIndex();
+                int nextMusicIndex = currentMusicIndex - 1;
+                if (nextMusicIndex < 0 || nextMusicIndex>=musicList.Length)
+                {
+                    nextMusicIndex = currentMusicIndex;
+                }
+                textMusicName.text = "<<<    " + musicList[nextMusicIndex].name + "    >>>";
+                audioManager.GetComponent<AudioManager>().SetMusicIndex(nextMusicIndex);
+            }
+            if (isRightPressed)
+            {
+                currentMusicIndex = audioManager.GetComponent<AudioManager>().GetMusicIndex();
+                int nextMusicIndex = currentMusicIndex + 1;
+                if (nextMusicIndex < 0 || nextMusicIndex >= musicList.Length)
+                {
+                    nextMusicIndex = currentMusicIndex;
+                }
+                textMusicName.text = "<<<    " + musicList[nextMusicIndex].name + "    >>>";
+                audioManager.GetComponent<AudioManager>().SetMusicIndex(nextMusicIndex);
+            }
+
+            StopAllCoroutines();
+            StartCoroutine(Press());
         }
+    }
+
+    private IEnumerator Press()
+    {
+        canPress = false;
+        yield return new WaitForSeconds(0.2f);
+        canPress = true;
     }
 
     public void StartGame()
