@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     public GameObject comboManager;
     public GameObject gameClearChecker;
     public List<GameObject> spawnPoints;
+    public GameObject judgementTextManager;
 
     private void Start()
     {
@@ -173,6 +174,7 @@ public class GameManager : MonoBehaviour
         LeftNoteFrame.GetComponent<LeftNoteFrame>().Stop();
         comboManager.GetComponent<ComboManager>().Stop();
         gameClearChecker?.GetComponent<GameClearChecker>().Stop();
+        judgementTextManager?.GetComponent<JudgementTextManager>().Stop();
         foreach (GameObject spawnPoint in spawnPoints)
         {
             spawnPoint.GetComponent<EnemySpawner>().Stop();

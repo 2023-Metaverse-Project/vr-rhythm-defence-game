@@ -33,6 +33,7 @@ public class TimingManager : MonoBehaviour
     [SerializeField]
     Animator rightNoteFramePopAnimator;
 
+
     ComboManager comboManager;
     AudioManager audioManager;
 
@@ -75,6 +76,7 @@ public class TimingManager : MonoBehaviour
 
                     //Debug.Log("Hit" + x);
 
+                    
 
                     switch (x)
                     {
