@@ -7,7 +7,7 @@ public class Music
 {
     public string name;
     public AudioClip clip;
-    public float volume;
+    public int bpm;
 }
 
 public class AudioManager : MonoBehaviour
@@ -25,22 +25,50 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     AudioSource[] SFXPlayerList = null;
 
+    private int music_index = 2;
+    NotesManager notesManager = null;
+
     private void Start()
     {
         instance = this;
+        notesManager = FindObjectOfType<NotesManager>();
     }
 
-    public void PlayMusic(string p_music_name)
+    public void Play()
     {
-        for (int i = 0; i < MusicList.Length; i++)
-        {
-            if(p_music_name == MusicList[i].name)
-            {
-                MusicPlayer.clip = MusicList[i].clip;
-                MusicPlayer.Play();
-                return;
-            }
-        }
+        notesManager.SetBPM(MusicList[music_index].bpm);
+        Debug.Log("PLAY(): BPM을 변경합니다.:" + MusicList[music_index].bpm);
+    }
+    public void Stop()
+    {
+        StopMusic();
+    }
+    public void Restart()
+    {
+        notesManager.SetBPM(MusicList[music_index].bpm);
+        Debug.Log("PLAY(): BPM을 변경합니다.:" + MusicList[music_index].bpm);
+    }
+
+    public void SetMusicIndex(int index)
+    {
+        music_index = index;
+    }
+
+    public void PlayMusic()
+    {
+        //for (int i = 0; i < MusicList.Length; i++)
+        //{
+        //    if(p_music_name == MusicList[i].name)
+        //    {
+        //        MusicPlayer.clip = MusicList[i].clip;
+        //        MusicPlayer.Play();
+        //        return;
+        //    }
+        //    Debug.Log(p_music_name + "(이)라는 이름의 음악이 없습니다.");
+        //}
+
+        MusicPlayer.clip = MusicList[music_index].clip;
+        MusicPlayer.Play();
     }
 
     public void StopMusic()

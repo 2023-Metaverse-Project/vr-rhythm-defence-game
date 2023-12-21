@@ -77,4 +77,8 @@ public class NotesManager : MonoBehaviour
         }
     }
 
+    public void SetBPM(int p_bpm)
+    {
+        bpm = p_bpm;
+    }
 }

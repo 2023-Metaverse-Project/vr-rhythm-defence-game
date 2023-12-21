@@ -29,11 +29,13 @@ public class TimingManager : MonoBehaviour
     private UnityEvent onMissPenalty;
 
     ComboManager comboManager;
+    AudioManager audioManager;
 
     void Start()
     {
         // Combo Manager 참조할 수 있게!
         comboManager = FindObjectOfType<ComboManager>();
+        audioManager = FindObjectOfType<AudioManager>();
 
         // 타이밍 박스 설정
         timingBoxs = new Vector2[timingRect.Length];
@@ -87,6 +89,8 @@ public class TimingManager : MonoBehaviour
                             break;
                     }
 
+                    audioManager.PlaySFX("Clap");
+                    //AudioManager.instance.PlaySFX("Clap");
 
                     return;
                 }
