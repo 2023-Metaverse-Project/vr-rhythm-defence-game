@@ -39,9 +39,7 @@ public class AudioManager : MonoBehaviour
 
     public void Play()
     {
-        Debug.Log("Here: " + notesManager.ToString());
         notesManager.SetBPM(MusicList[music_index].bpm);
-        Debug.Log("PLAY(): BPM을 변경합니다.:" + MusicList[music_index].bpm);
     }
     public void Stop()
     {
@@ -50,7 +48,6 @@ public class AudioManager : MonoBehaviour
     public void Restart()
     {
         notesManager.SetBPM(MusicList[music_index].bpm);
-        Debug.Log("PLAY(): BPM을 변경합니다.:" + MusicList[music_index].bpm);
     }
 
     public Music[] GetMusicList()

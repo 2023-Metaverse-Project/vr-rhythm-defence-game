@@ -23,6 +23,11 @@ public class EnemySpawner : MonoBehaviour
 
     public void Play()
     {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            GameObject child = transform.GetChild(i).gameObject;
+            GameObject.Destroy(child);
+        }
         StartCoroutine(SpawnProcess());
     }
 

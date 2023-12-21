@@ -8,6 +8,7 @@ using TMPro;
 using Unity.VisualScripting;
 
 public enum GameStopType {GAMEOVER=0, GAMECLEAR}
+public enum CurrentMode {MenuUI=0, GamingUI, GameoverUI, GameclearUI}
 
 public class GameManager : MonoBehaviour
 {
@@ -32,12 +33,16 @@ public class GameManager : MonoBehaviour
     private Music[] musicList = null;
     private int currentMusicIndex = 0;
 
+    private CurrentMode currentMode = CurrentMode.MenuUI;
+
     [Header("UI")]
     public GameObject menuUI;
     public GameObject gamingUI;
     public GameObject gameoverUI;
     public GameObject gameclearUI;
-    public TextMeshProUGUI textMusicName;
+    public TextMeshProUGUI textMusicNameInMenuUI;
+    public TextMeshProUGUI textMusicNameInGameoverUI;
+    public TextMeshProUGUI textMusicNameInGameclearUI;
 
     [Header("Managing Objects")]
     public GameObject note;
@@ -77,7 +82,7 @@ public class GameManager : MonoBehaviour
 
             if (isRestartPressed)  // 재시작
             {
-                RestartGame();
+                StartGame();
             }
 
             InputHelpers.IsPressed(InputDevices.GetDeviceAtXRNode(inputSource), LeftButton, out bool isLeftPressed, inputThreshold);
@@ -91,7 +96,9 @@ public class GameManager : MonoBehaviour
                 {
                     nextMusicIndex = currentMusicIndex;
                 }
-                textMusicName.text = "<<<    " + musicList[nextMusicIndex].name + "    >>>";
+                textMusicNameInMenuUI.text = "<<<    " + musicList[nextMusicIndex].name + "    >>>";
+                textMusicNameInGameoverUI.text = "<<<    " + musicList[nextMusicIndex].name + "    >>>";
+                textMusicNameInGameclearUI.text = "<<<    " + musicList[nextMusicIndex].name + "    >>>";
                 audioManager.GetComponent<AudioManager>().SetMusicIndex(nextMusicIndex);
             }
             if (isRightPressed)
@@ -102,7 +109,9 @@ public class GameManager : MonoBehaviour
                 {
                     nextMusicIndex = currentMusicIndex;
                 }
-                textMusicName.text = "<<<    " + musicList[nextMusicIndex].name + "    >>>";
+                textMusicNameInMenuUI.text = "<<<    " + musicList[nextMusicIndex].name + "    >>>";
+                textMusicNameInGameoverUI.text = "<<<    " + musicList[nextMusicIndex].name + "    >>>";
+                textMusicNameInGameclearUI.text = "<<<    " + musicList[nextMusicIndex].name + "    >>>";
                 audioManager.GetComponent<AudioManager>().SetMusicIndex(nextMusicIndex);
             }
 
@@ -120,6 +129,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        currentMode = CurrentMode.GamingUI;
+
         canPress = false;
 
         gamingUI.SetActive(true);
@@ -146,10 +157,12 @@ public class GameManager : MonoBehaviour
         menuUI.SetActive(false);
         if (gameStoptype == GameStopType.GAMEOVER)
         {
+            currentMode = CurrentMode.GameoverUI;
             gameoverUI.SetActive(true);
         }
         else if (gameStoptype == GameStopType.GAMECLEAR)
         {
+            currentMode = CurrentMode.GameclearUI;
             gameclearUI.SetActive(true);
         }
         
@@ -164,32 +177,34 @@ public class GameManager : MonoBehaviour
         foreach (GameObject spawnPoint in spawnPoints)
         {
             spawnPoint.GetComponent<EnemySpawner>().Stop();
-            if ( gameStoptype == GameStopType.GAMECLEAR)
+            if (gameStoptype == GameStopType.GAMECLEAR)
             {
                 // 이후 고려
             }
         }
     }
 
-    public void RestartGame()
-    {
-        canPress = false;
+    //public void RestartGame()
+    //{
+    //    currentMode = CurrentMode.GamingUI;
 
-        gamingUI.SetActive(true);
-        menuUI.SetActive(false);
-        gameoverUI.SetActive(false);
-        gameclearUI.SetActive(false);
+    //    canPress = false;
 
-        note.GetComponent<NotesManager>().Restart();
-        pressRecognizer.GetComponent<PressRecognizer>().Restart();
-        core.GetComponent<Core>().Restart();
-        audioManager?.GetComponent <AudioManager>().Restart();
-        gameClearChecker?.GetComponent<GameClearChecker>().Restart();
-        foreach (GameObject spawnPoint in spawnPoints)
-        {
-            spawnPoint.GetComponent<EnemySpawner>().Restart();
-        }
-    }
+    //    gamingUI.SetActive(true);
+    //    menuUI.SetActive(false);
+    //    gameoverUI.SetActive(false);
+    //    gameclearUI.SetActive(false);
+
+    //    note.GetComponent<NotesManager>().Restart();
+    //    pressRecognizer.GetComponent<PressRecognizer>().Restart();
+    //    core.GetComponent<Core>().Restart();
+    //    audioManager?.GetComponent <AudioManager>().Restart();
+    //    gameClearChecker?.GetComponent<GameClearChecker>().Restart();
+    //    foreach (GameObject spawnPoint in spawnPoints)
+    //    {
+    //        spawnPoint.GetComponent<EnemySpawner>().Restart();
+    //    }
+    //}
 
     public bool GetCanPress()
     {
