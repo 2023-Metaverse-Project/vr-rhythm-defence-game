@@ -72,6 +72,11 @@ public class ShootManager : MonoBehaviour
         this.skill = skill;
     }
 
+    public Skill GetSkill()
+    {
+        return skill;
+    }
+
     private void ShootPerfect()
     {
         missileSpeed = perfectSpeed;

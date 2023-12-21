@@ -18,9 +18,10 @@ public class DomboShootManager : MonoBehaviour
 
     [Header("Skill Speed Setting")]
     public float perfectSpeed;
-    private float missileSpeed = 700;
+    private float missileSpeed;
 
     [Header("Mode")]
+    public ShootManager shootManager;
     public Skill skill = 0;
     public LayerMask layerMask;
 
@@ -34,19 +35,36 @@ public class DomboShootManager : MonoBehaviour
     public void comboShoot(int comboLevel)
     {
         StopAllCoroutines();
+        skill = shootManager.GetSkill();
         StartCoroutine(ComboShootRepeatedly(comboLevel));
     }
 
     private IEnumerator ComboShootRepeatedly(int comboLevel)
     {
-        int shooting = Mathf.Min(comboLevel * 10, 30);
-        while (shooting >= 0)
+        int combos = comboLevel * 10;
+        int shooting;
+        missileSpeed = perfectSpeed;
+
+        if ((int)(combos % 50) == 0)
         {
-            missileSpeed = perfectSpeed;
-            ShootProjectileStartTarget();
-            yield return new WaitForSeconds(0.1f);
-            shooting -= 1;
-            skill = (Skill)UnityEngine.Random.Range(0, 3);
+            shooting = 30;
+            while (shooting >= 0)
+            {
+                ShootProjectileStartTarget();
+                yield return new WaitForSeconds(0.1f);
+                shooting -= 1;
+                skill = (Skill)UnityEngine.Random.Range(0, 3);
+            }
+        }
+        else
+        {
+            shooting = 5;
+            while (shooting >= 0)
+            {
+                ShootProjectileStartTarget();
+                yield return new WaitForSeconds(0.1f);
+                shooting -= 1;          
+            }
         }
     }
 
