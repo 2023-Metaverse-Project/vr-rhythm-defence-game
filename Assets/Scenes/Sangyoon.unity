@@ -3215,32 +3215,39 @@ MonoBehaviour:
   - name: 113
     clip: {fileID: 8300000, guid: 0b8f0c8a0f8bcf6459c5307a30619a7a, type: 3}
     bpm: 113
-    sinkdelay: 0
+    sinkdelay: 0.35
+    playtimeinsec: 181
   - name: 127
     clip: {fileID: 8300000, guid: 9448bbe1a5a9acf46a9bdbf8ea5317ff, type: 3}
     bpm: 127
     sinkdelay: 0
+    playtimeinsec: 185
   - name: 128
     clip: {fileID: 8300000, guid: a3a67a99f964d0f4b8a189ae055c41e0, type: 3}
     bpm: 128
-    sinkdelay: 0.15
+    sinkdelay: 0.17
+    playtimeinsec: 236
   - name: 130
     clip: {fileID: 8300000, guid: 73eb23c76437db341b8aa0e8efa2a348, type: 3}
     bpm: 130
     sinkdelay: 0.235
+    playtimeinsec: 146
   - name: 135
     clip: {fileID: 8300000, guid: bcceff3cc9649bc4c9e857bbe53c43ce, type: 3}
     bpm: 135
     sinkdelay: 0.165
+    playtimeinsec: 208
   SFXList:
   - name: Clap
     clip: {fileID: 8300000, guid: 1ef9bd4096ab94548a181668147adef1, type: 3}
     bpm: 0
     sinkdelay: 0
+    playtimeinsec: 0
   - name: 
     clip: {fileID: 0}
     bpm: 0
     sinkdelay: 0
+    playtimeinsec: 0
   MusicPlayer: {fileID: 1686518571}
   SFXPlayerList:
   - {fileID: 1653667964}
@@ -3493,7 +3500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6998027605933756155, guid: 4dd6fdea359394b44b3ff29633a63eff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.14
+      value: 14.241
       objectReference: {fileID: 0}
     - target: {fileID: 6998027605933756155, guid: 4dd6fdea359394b44b3ff29633a63eff, type: 3}
       propertyPath: m_LocalPosition.z

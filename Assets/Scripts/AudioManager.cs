@@ -9,6 +9,7 @@ public class Music
     public AudioClip clip;
     public int bpm;
     public float sinkdelay;
+    public int playtimeinsec;
 }
 
 public class AudioManager : MonoBehaviour
@@ -29,7 +30,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     AudioSource[] SFXPlayerList = null;
 
-    private int music_index = 2;
+    private int music_index = 0;
 
     private void Start()
     {
@@ -50,6 +51,11 @@ public class AudioManager : MonoBehaviour
     {
         notesManager.SetBPM(MusicList[music_index].bpm);
         Debug.Log("PLAY(): BPM을 변경합니다.:" + MusicList[music_index].bpm);
+    }
+
+    public Music[] GetMusicList()
+    {
+        return MusicList;
     }
 
     public void SetMusicIndex(int index)
