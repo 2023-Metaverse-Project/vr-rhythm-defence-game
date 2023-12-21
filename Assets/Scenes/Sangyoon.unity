@@ -4211,15 +4211,15 @@ PrefabInstance:
     - target: {fileID: 4605808190320204783, guid: e9240ee6fa8bec74eb96aa4b86fe8bca, type: 3}
       propertyPath: PlasmaPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 7290027298486706542, guid: 67906ef600259fd42a319e4adf584e88, type: 3}
+      objectReference: {fileID: 2434203933953324531, guid: 900f893ccafca6d44866115a26f27781, type: 3}
     - target: {fileID: 4605808190320204783, guid: e9240ee6fa8bec74eb96aa4b86fe8bca, type: 3}
       propertyPath: PlasmaPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 6405569524035434752, guid: bc0ef9b2d403e4d4f85bd24ab9923f64, type: 3}
+      objectReference: {fileID: 2434203933953324531, guid: f6df0e3b984a9d943b755e4c22a1856f, type: 3}
     - target: {fileID: 4605808190320204783, guid: e9240ee6fa8bec74eb96aa4b86fe8bca, type: 3}
       propertyPath: PlasmaPrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 6405569524035434752, guid: b609e2d7dde100345a25ac7edc1c86c1, type: 3}
+      objectReference: {fileID: 2434203933953324531, guid: 569e54332d5696f4b94fa69f27bfd3fd, type: 3}
     - target: {fileID: 4605808190320204783, guid: e9240ee6fa8bec74eb96aa4b86fe8bca, type: 3}
       propertyPath: FireballPrefabs.Array.data[0]
       value: 
@@ -5005,7 +5005,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 115
   FireballPrefab: {fileID: 6427749512348453943, guid: 8d00b869208824a4ca6f3bb94281c5fa, type: 3}
-  PlasmaPrefabs: {fileID: 7290027298486706542, guid: 67906ef600259fd42a319e4adf584e88, type: 3}
+  PlasmaPrefabs: {fileID: 2434203933953324531, guid: 900f893ccafca6d44866115a26f27781, type: 3}
   IcePrefabs: {fileID: 7881612236244868579, guid: ec8367ccd2d63204fa9ca2fd5ff53ba8, type: 3}
 --- !u!1 &2025716440
 GameObject:
