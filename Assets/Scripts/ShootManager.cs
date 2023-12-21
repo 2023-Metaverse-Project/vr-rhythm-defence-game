@@ -26,6 +26,9 @@ public class ShootManager : MonoBehaviour
     public Skill skill = 0;
     public PressTiming timing = PressTiming.Pass;
 
+    [Header("Combo Shooter")]
+    ComboManager comboManager;
+
     [SerializeField]
     private List<GameObject> FireballPrefabs = new List<GameObject>();
     [SerializeField]
