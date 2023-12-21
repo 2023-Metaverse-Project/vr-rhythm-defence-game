@@ -4220,6 +4220,10 @@ PrefabInstance:
       propertyPath: PlasmaPrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 6405569524035434752, guid: b609e2d7dde100345a25ac7edc1c86c1, type: 3}
+    - target: {fileID: 4605808190320204783, guid: e9240ee6fa8bec74eb96aa4b86fe8bca, type: 3}
+      propertyPath: FireballPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6427749512348453943, guid: 8d00b869208824a4ca6f3bb94281c5fa, type: 3}
     - target: {fileID: 8201590568155417436, guid: e9240ee6fa8bec74eb96aa4b86fe8bca, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.98
@@ -4544,11 +4548,23 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19815734, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19815734, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
       propertyPath: scalingMode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 19815734, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
       propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8556650318275650573, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9162856549712186310, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4988,7 +5004,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 115
-  FireballPrefab: {fileID: 3108223457779650296, guid: 33cdeaa73f5aeee4eb3e3f7ea515c64d, type: 3}
+  FireballPrefab: {fileID: 6427749512348453943, guid: 8d00b869208824a4ca6f3bb94281c5fa, type: 3}
   PlasmaPrefabs: {fileID: 7290027298486706542, guid: 67906ef600259fd42a319e4adf584e88, type: 3}
   IcePrefabs: {fileID: 7881612236244868579, guid: ec8367ccd2d63204fa9ca2fd5ff53ba8, type: 3}
 --- !u!1 &2025716440
