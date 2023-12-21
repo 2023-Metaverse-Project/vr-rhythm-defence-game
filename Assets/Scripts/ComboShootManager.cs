@@ -1,12 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
-using UnityEngine.XR;
-using UnityEditor.Experimental.GraphView;
-using System.Net;
-using System;
-using UnityEditorInternal;
 
 public class DomboShootManager : MonoBehaviour
 {

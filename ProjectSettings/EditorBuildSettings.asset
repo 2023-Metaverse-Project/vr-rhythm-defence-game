@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Sangyoon.unity
+    guid: 6ef4686c6854b0c4fb795b143f75afe0
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f3bf87b865d93054481430be76bc0dae, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5a04528140edebf49a6b1d6789e0922d, type: 2}

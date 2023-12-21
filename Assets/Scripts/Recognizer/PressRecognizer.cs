@@ -1,9 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine.Events;
 
 public class PressRecognizer : MonoBehaviour
