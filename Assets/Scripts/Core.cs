@@ -72,6 +72,7 @@ public class Core : MonoBehaviour
         if (currentHP <= 0)
         {
             currentHP = 0;
+            AudioManager.instance.PlaySFX("Falling");
             onGameover?.Invoke(GameStopType.GAMEOVER);
         }
     }

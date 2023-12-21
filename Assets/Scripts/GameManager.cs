@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     private float inputThreshold = 0.1f;
 
     private bool canPress = true;
+    private bool slowPress = true;
 
     private Music[] musicList = null;
     private int currentMusicIndex = 0;
@@ -62,7 +63,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canPress)
+        if (canPress && slowPress)
         {
             InputHelpers.IsPressed(InputDevices.GetDeviceAtXRNode(inputSource), StartButton, out bool isStartPressed, inputThreshold);
 
@@ -114,17 +115,15 @@ public class GameManager : MonoBehaviour
                 textMusicNameInGameclearUI.text = "<<<    " + musicList[nextMusicIndex].name + "    >>>";
                 audioManager.GetComponent<AudioManager>().SetMusicIndex(nextMusicIndex);
             }
-
-            StopAllCoroutines();
             StartCoroutine(Press());
         }
     }
 
     private IEnumerator Press()
     {
-        canPress = false;
+        slowPress = false;
         yield return new WaitForSeconds(0.2f);
-        canPress = true;
+        slowPress = true;
     }
 
     public void StartGame()
@@ -186,6 +185,7 @@ public class GameManager : MonoBehaviour
 
     //public void RestartGame()
     //{
+    //    
     //    currentMode = CurrentMode.GamingUI;
 
     //    canPress = false;

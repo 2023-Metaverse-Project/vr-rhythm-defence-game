@@ -28,6 +28,11 @@ public class TimingManager : MonoBehaviour
     [SerializeField]
     private UnityEvent onMissPenalty;
 
+    [SerializeField]
+    Animator leftNoteFramePopAnimator;
+    [SerializeField]
+    Animator rightNoteFramePopAnimator;
+
     ComboManager comboManager;
     AudioManager audioManager;
 
@@ -76,16 +81,24 @@ public class TimingManager : MonoBehaviour
                         case 0: // Perfect
                             onTimingChecked?.Invoke(PressTiming.Perfect);
                             comboManager?.IncreaseCombo(); // ÄÞº¸ Áõ°¡
+                            //onNiceTiming?.Invoke();
+                            leftNoteFramePopAnimator?.SetTrigger("Hit");
+                            rightNoteFramePopAnimator?.SetTrigger("Hit");
                             break;
 
                         case 1: // Good
                             onTimingChecked?.Invoke(PressTiming.Good);
                             comboManager?.IncreaseCombo(); // ÄÞº¸ Áõ°¡
+                            //onNiceTiming?.Invoke();
+                            leftNoteFramePopAnimator?.SetTrigger("Hit");
+                            rightNoteFramePopAnimator?.SetTrigger("Hit");
                             break;
 
                         case 2: // Bad
                             onTimingChecked?.Invoke(PressTiming.Bad);
                             comboManager?.ResetCombo();
+                            leftNoteFramePopAnimator?.SetTrigger("Hit");
+                            rightNoteFramePopAnimator?.SetTrigger("Hit");
                             break;
                     }
 

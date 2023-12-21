@@ -50,7 +50,8 @@ public class GameClearChecker : MonoBehaviour
             currentTime += Time.deltaTime;
             if (currentTime > gameTotalTime)
             {
-                Debug.Log("GAMECLEAR~" + currentTime + " / " + gameTotalTime);
+                //Debug.Log("GAMECLEAR~" + currentTime + " / " + gameTotalTime);
+                AudioManager.instance.PlaySFX("Finish");
                 onGameclear?.Invoke(GameStopType.GAMECLEAR);
             }
         }

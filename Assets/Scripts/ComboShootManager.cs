@@ -45,7 +45,7 @@ public class DomboShootManager : MonoBehaviour
         int shooting;
         missileSpeed = perfectSpeed;
 
-        if ((int)(combos % 50) == 0)
+        if ((int)(combos % 30) == 0)
         {
             shooting = 30;
             while (shooting >= 0)
