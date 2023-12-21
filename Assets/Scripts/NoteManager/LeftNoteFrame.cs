@@ -17,4 +17,9 @@ public class LeftNoteFrame : MonoBehaviour
             }
         }
     }
+
+    public void Stop()
+    {
+        musicStart = false;
+    }
 }

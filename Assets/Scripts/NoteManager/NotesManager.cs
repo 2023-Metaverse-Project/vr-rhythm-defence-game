@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NotesManager : MonoBehaviour
 {
+    public static NotesManager instance;
+
     [SerializeField]
     private int bpm = 0;
 
@@ -25,10 +27,13 @@ public class NotesManager : MonoBehaviour
     private bool isPlaying = false;
     private List<GameObject> activeNoteList = new List<GameObject>();
 
+
     private void Start()
     {
         theTimingManager = GetComponent<TimingManager>();
         theComboManager = FindObjectOfType<ComboManager>();
+        
+        instance = this;
     }
 
     public void Play()
@@ -39,10 +44,10 @@ public class NotesManager : MonoBehaviour
     public void Stop()
     {
         isPlaying=false;
-        Debug.Log("NotesManager Stop called");
+        //Debug.Log("NotesManager Stop called");
         for (int i = 0; i < activeNoteList.Count; i++)
         {
-            Debug.Log(activeNoteList[i]);
+            //Debug.Log(activeNoteList[i]);
             if (activeNoteList[i].CompareTag("LeftNote"))
                 ObjectPool.instance.leftNoteQueue.Enqueue(activeNoteList[i]);
             else if (activeNoteList[i].CompareTag("RightNote"))

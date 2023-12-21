@@ -89,7 +89,7 @@ public class TimingManager : MonoBehaviour
                             break;
                     }
 
-                    audioManager.PlaySFX("Clap");
+                    //audioManager.PlaySFX("Clap");
                     //AudioManager.instance.PlaySFX("Clap");
 
                     return;

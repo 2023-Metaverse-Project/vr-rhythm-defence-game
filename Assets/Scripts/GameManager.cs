@@ -30,6 +30,9 @@ public class GameManager : MonoBehaviour
     public GameObject note;
     public GameObject pressRecognizer;
     public GameObject core;
+    public GameObject audioManager;
+    public GameObject LeftNoteFrame; // Note 충돌하면 노래 재생 시작되는 애임.
+    public GameObject comboManager;
     public List<GameObject> spawnPoints;
 
     // Update is called once per frame
@@ -71,6 +74,7 @@ public class GameManager : MonoBehaviour
         note.GetComponent<NotesManager>().Play();
         pressRecognizer.GetComponent<PressRecognizer>().Play();
         core.GetComponent<Core>().Play();
+        audioManager?.GetComponent<AudioManager>().Play();
         foreach (GameObject spawnPoint in spawnPoints)
         {
             spawnPoint.GetComponent<EnemySpawner>().Play();
@@ -88,6 +92,9 @@ public class GameManager : MonoBehaviour
         note.GetComponent<NotesManager>().Stop();
         pressRecognizer.GetComponent<PressRecognizer>().Stop();
         core.GetComponent<Core>().Stop();
+        audioManager?.GetComponent<AudioManager>().Stop();
+        LeftNoteFrame.GetComponent<LeftNoteFrame>().Stop();
+        comboManager.GetComponent<ComboManager>().Stop();
         foreach (GameObject spawnPoint in spawnPoints)
         {
             spawnPoint.GetComponent<EnemySpawner>().Stop();
@@ -105,6 +112,7 @@ public class GameManager : MonoBehaviour
         note.GetComponent<NotesManager>().Restart();
         pressRecognizer.GetComponent<PressRecognizer>().Restart();
         core.GetComponent<Core>().Restart();
+        audioManager?.GetComponent <AudioManager>().Restart();
         foreach (GameObject spawnPoint in spawnPoints)
         {
             spawnPoint.GetComponent<EnemySpawner>().Restart();

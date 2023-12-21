@@ -8,12 +8,16 @@ public class Music
     public string name;
     public AudioClip clip;
     public int bpm;
+    public float sinkdelay;
 }
 
 public class AudioManager : MonoBehaviour
 {
     // 언제 어디서든지 호출할 수 있도록 자기 자신을 instance로 만든다.
     public static AudioManager instance;
+
+    [SerializeField]
+    NotesManager notesManager;
 
     [SerializeField]
     Music[] MusicList = null;
@@ -26,16 +30,15 @@ public class AudioManager : MonoBehaviour
     AudioSource[] SFXPlayerList = null;
 
     private int music_index = 2;
-    NotesManager notesManager = null;
 
     private void Start()
     {
         instance = this;
-        notesManager = FindObjectOfType<NotesManager>();
     }
 
     public void Play()
     {
+        Debug.Log("Here: " + notesManager.ToString());
         notesManager.SetBPM(MusicList[music_index].bpm);
         Debug.Log("PLAY(): BPM을 변경합니다.:" + MusicList[music_index].bpm);
     }
@@ -66,14 +69,20 @@ public class AudioManager : MonoBehaviour
         //    }
         //    Debug.Log(p_music_name + "(이)라는 이름의 음악이 없습니다.");
         //}
+        StartCoroutine(WaitAndPlay(MusicList[music_index]));
+    }
 
-        MusicPlayer.clip = MusicList[music_index].clip;
+    private IEnumerator WaitAndPlay(Music music)
+    {
+        yield return new WaitForSeconds(music.sinkdelay);
+        MusicPlayer.clip = music.clip;
         MusicPlayer.Play();
     }
 
     public void StopMusic()
     {
         MusicPlayer.Stop();
+        StopAllCoroutines();
     }
 
     public void PlaySFX(string p_sfx_name)
