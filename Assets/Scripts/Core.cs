@@ -16,8 +16,11 @@ public class Core : MonoBehaviour
 
     [Header("ETC")]
     public TextMeshProUGUI textHP;
+    public GameObject BloodEffect;
 
     public UnityEvent onGameover;
+    public UnityEvent onDamaged;
+
 
 
     private void Awake()
@@ -61,6 +64,8 @@ public class Core : MonoBehaviour
             //Debug.Log("Small");
             currentHP -= smallDamage;
         }
+
+        onDamaged.Invoke();
 
         other.transform.GetComponent<Enemy>().Die();
 

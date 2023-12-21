@@ -123,6 +123,16 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &3287677 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 439974, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+  m_PrefabInstance: {fileID: 1818449561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &3287679 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19815734, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+  m_PrefabInstance: {fileID: 1818449561}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &30064611 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2579312251540777376, guid: dd7193d8262f67c40acc6b9ca564eb6c, type: 3}
@@ -1106,6 +1116,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 975352513}
+  - {fileID: 3287677}
   m_Father: {fileID: 1484265732}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4402,12 +4413,28 @@ MonoBehaviour:
   middleDamage: 5
   smallDamage: 1
   textHP: {fileID: 975352514}
+  BloodEffect: {fileID: 0}
   onGameover:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 968139363}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: StopGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDamaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3287679}
+        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4448,6 +4475,87 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1276121179}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1818449561
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 294504194}
+    m_Modifications:
+    - target: {fileID: 149344, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: m_Name
+      value: BloodExplosion2D
+      objectReference: {fileID: 0}
+    - target: {fileID: 439974, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 439974, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 439974, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 439974, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 439974, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 439974, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439974, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 439974, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 439974, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 439974, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 439974, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 439974, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 439974, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 439974, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19815734, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: scalingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19815734, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 617378de28fbaa64c96485d5b0d9169b, type: 3}
 --- !u!1 &1827940317
 GameObject:
   m_ObjectHideFlags: 0
