@@ -22,33 +22,75 @@ public class NotesManager : MonoBehaviour
     TimingManager theTimingManager;
     ComboManager theComboManager;
 
+    private bool isPlaying = false;
+    private List<GameObject> activeNoteList = new List<GameObject>();
+
     private void Start()
     {
         theTimingManager = GetComponent<TimingManager>();
         theComboManager = FindObjectOfType<ComboManager>();
     }
 
+    public void Play()
+    {
+        isPlaying = true;
+    }
+
+    public void Stop()
+    {
+        isPlaying=false;
+        Debug.Log("NotesManager Stop called");
+        for (int i = 0; i < activeNoteList.Count; i++)
+        {
+            Debug.Log(activeNoteList[i]);
+            if (activeNoteList[i].CompareTag("LeftNote"))
+                ObjectPool.instance.leftNoteQueue.Enqueue(activeNoteList[i]);
+            else if (activeNoteList[i].CompareTag("RightNote"))
+                ObjectPool.instance.rightNoteQueue.Enqueue(activeNoteList[i]);
+
+            activeNoteList[i].SetActive(false);
+        }
+
+        activeNoteList.Clear();
+        theTimingManager.leftNoteList.Clear();
+        theTimingManager.rightNoteList.Clear();
+    }
+
+    public void Restart()
+    {
+        isPlaying = true;
+    }
+
     private void Update()
     {
-        currentTime += Time.deltaTime;
-
-        if (currentTime >= 60d / bpm)
+        if (isPlaying)
         {
-            GameObject t_leftNote = ObjectPool.instance.leftNoteQueue.Dequeue();
-            t_leftNote.transform.position = tfLeftNoteSpawn.transform.position;
-            t_leftNote.SetActive(true);
-            GameObject t_rightNote = ObjectPool.instance.rightNoteQueue.Dequeue();
-            t_rightNote.transform.position = tfRightNoteSpawn.transform.position;
-            t_rightNote.SetActive(true);
+            currentTime += Time.deltaTime;
 
-            //GameObject t_leftNote = Instantiate(leftNote, tfLeftNoteSpawn.position, Quaternion.identity, this.transform);
-            //GameObject t_rightNote = Instantiate(rightNote, tfRightNoteSpawn.position, Quaternion.Euler(0,0,180), this.transform);
+            if (currentTime >= 60d / bpm)
+            {
+                GameObject t_leftNote = ObjectPool.instance.leftNoteQueue.Dequeue();
+                t_leftNote.transform.position = tfLeftNoteSpawn.transform.position;
+                t_leftNote.SetActive(true);
+                activeNoteList.Add(t_leftNote);
 
-            theTimingManager.leftNoteList.Add(t_leftNote);
-            theTimingManager.rightNoteList.Add(t_rightNote);
+                GameObject t_rightNote = ObjectPool.instance.rightNoteQueue.Dequeue();
+                t_rightNote.transform.position = tfRightNoteSpawn.transform.position;
+                t_rightNote.SetActive(true);
+                activeNoteList.Add(t_rightNote);
 
-            currentTime -= 60d / bpm;
+
+
+                //GameObject t_leftNote = Instantiate(leftNote, tfLeftNoteSpawn.position, Quaternion.identity, this.transform);
+                //GameObject t_rightNote = Instantiate(rightNote, tfRightNoteSpawn.position, Quaternion.Euler(0,0,180), this.transform);
+
+                theTimingManager.leftNoteList.Add(t_leftNote);
+                theTimingManager.rightNoteList.Add(t_rightNote);
+
+                currentTime -= 60d / bpm;
+            }
         }
+        
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -75,6 +117,8 @@ public class NotesManager : MonoBehaviour
 
             collision.gameObject.SetActive(false);
         }
+
+        activeNoteList.Remove(collision.gameObject);
     }
 
 }
