@@ -18,7 +18,7 @@ public class Core : MonoBehaviour
     public TextMeshProUGUI textHP;
     public GameObject BloodEffect;
 
-    public UnityEvent onGameover;
+    public UnityEvent<GameStopType> onGameover;
     public UnityEvent onDamaged;
 
 
@@ -72,7 +72,7 @@ public class Core : MonoBehaviour
         if (currentHP <= 0)
         {
             currentHP = 0;
-            onGameover?.Invoke();
+            onGameover?.Invoke(GameStopType.GAMEOVER);
         }
     }
 

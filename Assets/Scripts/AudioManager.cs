@@ -58,6 +58,11 @@ public class AudioManager : MonoBehaviour
         return MusicList;
     }
 
+    public int GetMusicIndex()
+    {
+        return music_index;
+    }
+
     public void SetMusicIndex(int index)
     {
         music_index = index;

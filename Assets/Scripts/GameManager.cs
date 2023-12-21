@@ -5,6 +5,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR;
 using UnityEngine.Events;
 
+public enum GameStopType {GAMEOVER=0, GAMECLEAR}
+
 public class GameManager : MonoBehaviour
 {
     [Header("# Input Info")]
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
     public GameObject menuUI;
     public GameObject gamingUI;
     public GameObject gameoverUI;
+    public GameObject gameclearUI;
 
     [Header("Managing Objects")]
     public GameObject note;
@@ -33,6 +36,7 @@ public class GameManager : MonoBehaviour
     public GameObject audioManager;
     public GameObject LeftNoteFrame; // Note 충돌하면 노래 재생 시작되는 애임.
     public GameObject comboManager;
+    public GameObject gameClearChecker;
     public List<GameObject> spawnPoints;
 
     // Update is called once per frame
@@ -70,24 +74,34 @@ public class GameManager : MonoBehaviour
         gamingUI.SetActive(true);
         menuUI.SetActive(false);
         gameoverUI.SetActive(false);
+        gameclearUI.SetActive(false);
 
         note.GetComponent<NotesManager>().Play();
         pressRecognizer.GetComponent<PressRecognizer>().Play();
         core.GetComponent<Core>().Play();
         audioManager?.GetComponent<AudioManager>().Play();
+        gameClearChecker?.GetComponent<GameClearChecker>().Play();
         foreach (GameObject spawnPoint in spawnPoints)
         {
             spawnPoint.GetComponent<EnemySpawner>().Play();
         }
     }
 
-    public void StopGame()
+    public void StopGame(GameStopType gameStoptype)
     {
         canPress = true;
 
         gamingUI.SetActive(false);
         menuUI.SetActive(false);
-        gameoverUI.SetActive(true);
+        if (gameStoptype == GameStopType.GAMEOVER)
+        {
+            gameoverUI.SetActive(true);
+        }
+        else if (gameStoptype == GameStopType.GAMECLEAR)
+        {
+            gameclearUI.SetActive(true);
+        }
+        
 
         note.GetComponent<NotesManager>().Stop();
         pressRecognizer.GetComponent<PressRecognizer>().Stop();
@@ -95,9 +109,14 @@ public class GameManager : MonoBehaviour
         audioManager?.GetComponent<AudioManager>().Stop();
         LeftNoteFrame.GetComponent<LeftNoteFrame>().Stop();
         comboManager.GetComponent<ComboManager>().Stop();
+        gameClearChecker?.GetComponent<GameClearChecker>().Stop();
         foreach (GameObject spawnPoint in spawnPoints)
         {
             spawnPoint.GetComponent<EnemySpawner>().Stop();
+            if ( gameStoptype == GameStopType.GAMECLEAR)
+            {
+                // 이후 고려
+            }
         }
     }
 
@@ -108,14 +127,21 @@ public class GameManager : MonoBehaviour
         gamingUI.SetActive(true);
         menuUI.SetActive(false);
         gameoverUI.SetActive(false);
+        gameclearUI.SetActive(false);
 
         note.GetComponent<NotesManager>().Restart();
         pressRecognizer.GetComponent<PressRecognizer>().Restart();
         core.GetComponent<Core>().Restart();
         audioManager?.GetComponent <AudioManager>().Restart();
+        gameClearChecker?.GetComponent<GameClearChecker>().Restart();
         foreach (GameObject spawnPoint in spawnPoints)
         {
             spawnPoint.GetComponent<EnemySpawner>().Restart();
         }
+    }
+
+    public bool GetCanPress()
+    {
+        return canPress;
     }
 }
