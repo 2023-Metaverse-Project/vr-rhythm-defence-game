@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animatorController = GetComponent<EnemyAnimatorController>();
 
-        agent.SetDestination(new Vector3(-3, 8, -124));
+        agent.SetDestination(new Vector3(-3, 8, -116));
         agent.speed = speed;
 
         currentHP = maxHP;
