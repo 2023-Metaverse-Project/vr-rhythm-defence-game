@@ -2541,6 +2541,7 @@ MonoBehaviour:
   menuUI: {fileID: 2025716440}
   gamingUI: {fileID: 1484265731}
   gameoverUI: {fileID: 61495261}
+  note: {fileID: 683579188}
   pressRecognizer: {fileID: 30064611}
   core: {fileID: 1803370604}
   spawnPoints:

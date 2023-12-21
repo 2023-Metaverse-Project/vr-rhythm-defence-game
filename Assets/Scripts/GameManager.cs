@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public GameObject gameoverUI;
 
     [Header("Managing Objects")]
+    public GameObject note;
     public GameObject pressRecognizer;
     public GameObject core;
     public List<GameObject> spawnPoints;
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
         menuUI.SetActive(false);
         gameoverUI.SetActive(false);
 
+        note.GetComponent<NotesManager>().Play();
         pressRecognizer.GetComponent<PressRecognizer>().Play();
         core.GetComponent<Core>().Play();
         foreach (GameObject spawnPoint in spawnPoints)
@@ -83,6 +85,7 @@ public class GameManager : MonoBehaviour
         menuUI.SetActive(false);
         gameoverUI.SetActive(true);
 
+        note.GetComponent<NotesManager>().Stop();
         pressRecognizer.GetComponent<PressRecognizer>().Stop();
         core.GetComponent<Core>().Stop();
         foreach (GameObject spawnPoint in spawnPoints)
@@ -99,6 +102,7 @@ public class GameManager : MonoBehaviour
         menuUI.SetActive(false);
         gameoverUI.SetActive(false);
 
+        note.GetComponent<NotesManager>().Restart();
         pressRecognizer.GetComponent<PressRecognizer>().Restart();
         core.GetComponent<Core>().Restart();
         foreach (GameObject spawnPoint in spawnPoints)
