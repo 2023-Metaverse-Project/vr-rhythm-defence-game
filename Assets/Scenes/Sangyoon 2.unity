@@ -2928,9 +2928,6 @@ MonoBehaviour:
   - name: 
     clip: {fileID: 0}
     volume: 0
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
   MusicPlayer: {fileID: 483626691}
   SFXPlayerList:
   - {fileID: 501277522}
