@@ -121,4 +121,8 @@ public class NotesManager : MonoBehaviour
         activeNoteList.Remove(collision.gameObject);
     }
 
+    public void SetBPM(int p_bpm)
+    {
+        bpm = p_bpm;
+    }
 }
