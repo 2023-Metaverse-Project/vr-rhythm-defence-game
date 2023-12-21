@@ -922,6 +922,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 19876996, guid: d16221e794fe16e4e8994a7f8c770561, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 19881018, guid: d16221e794fe16e4e8994a7f8c770561, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
       value: 3
@@ -2153,7 +2157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 40}
+  m_AnchoredPosition: {x: 0, y: -73.34}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &802162628
@@ -3174,7 +3178,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -40}
+  m_AnchoredPosition: {x: 0, y: -98.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1390509083
@@ -4170,6 +4174,10 @@ PrefabInstance:
       value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 4605808190320204783, guid: e9240ee6fa8bec74eb96aa4b86fe8bca, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 211
+      objectReference: {fileID: 0}
+    - target: {fileID: 4605808190320204783, guid: e9240ee6fa8bec74eb96aa4b86fe8bca, type: 3}
       propertyPath: IcePrefabs.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -4869,6 +4877,9 @@ MonoBehaviour:
   XROrigin: {fileID: 1276121173}
   perfectSpeed: 2000
   skill: 0
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 115
   FireballPrefab: {fileID: 3108223457779650296, guid: 33cdeaa73f5aeee4eb3e3f7ea515c64d, type: 3}
   PlasmaPrefabs: {fileID: 7290027298486706542, guid: 67906ef600259fd42a319e4adf584e88, type: 3}
   IcePrefabs: {fileID: 7881612236244868579, guid: ec8367ccd2d63204fa9ca2fd5ff53ba8, type: 3}

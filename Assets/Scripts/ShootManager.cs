@@ -25,9 +25,7 @@ public class ShootManager : MonoBehaviour
     [Header("Mode")]
     public Skill skill = 0;
     public PressTiming timing = PressTiming.Pass;
-
-    [Header("Combo Shooter")]
-    ComboManager comboManager;
+    public LayerMask layerMask;
 
     [SerializeField]
     private List<GameObject> FireballPrefabs = new List<GameObject>();
@@ -109,7 +107,7 @@ public class ShootManager : MonoBehaviour
         GameObject projectile = InstantiateSkillPrefab(spawnPosition);
 
         Vector3 targetPosition = new Vector3(XROrigin.transform.position.x, XROrigin.transform.position.y - 50, XROrigin.transform.position.z);
-        if (Physics.Raycast(handPoint.transform.position, handPoint.transform.forward, out RaycastHit hitInfo, maxDistance))
+        if (Physics.Raycast(handPoint.transform.position, handPoint.transform.forward, out RaycastHit hitInfo, maxDistance, layerMask))
         {
             targetPosition = hitInfo.transform.position + hitInfo.transform.forward.normalized * 1f;
         }

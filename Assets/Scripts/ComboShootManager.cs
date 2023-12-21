@@ -22,6 +22,7 @@ public class DomboShootManager : MonoBehaviour
 
     [Header("Mode")]
     public Skill skill = 0;
+    public LayerMask layerMask;
 
     [SerializeField]
     private GameObject FireballPrefab;
@@ -32,17 +33,18 @@ public class DomboShootManager : MonoBehaviour
 
     public void comboShoot(int comboLevel)
     {
+        StopAllCoroutines();
         StartCoroutine(ComboShootRepeatedly(comboLevel));
     }
 
     private IEnumerator ComboShootRepeatedly(int comboLevel)
     {
-        int shooting = comboLevel * 10;
+        int shooting = Mathf.Min(comboLevel * 10, 30);
         while (shooting >= 0)
         {
             missileSpeed = perfectSpeed;
             ShootProjectileStartTarget();
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
             shooting -= 1;
             skill = (Skill)UnityEngine.Random.Range(0, 3);
         }
@@ -58,7 +60,7 @@ public class DomboShootManager : MonoBehaviour
         GameObject projectile = InstantiateSkillPrefab(spawnPosition);
 
         Vector3 targetPosition = new Vector3(XROrigin.transform.position.x, XROrigin.transform.position.y - 50, XROrigin.transform.position.z);
-        if (Physics.Raycast(handPoint.transform.position, handPoint.transform.forward, out RaycastHit hitInfo, maxDistance))
+        if (Physics.Raycast(handPoint.transform.position, handPoint.transform.forward, out RaycastHit hitInfo, maxDistance, layerMask))
         {
             targetPosition = hitInfo.transform.position + hitInfo.transform.forward.normalized * 1f;
         }
