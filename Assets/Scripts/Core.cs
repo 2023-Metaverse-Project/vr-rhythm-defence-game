@@ -14,8 +14,6 @@ public class Core : MonoBehaviour
     public float middleDamage;
     public float smallDamage;
 
-    private bool isGameover = false;
-
     [Header("ETC")]
     public TextMeshProUGUI textHP;
 
@@ -27,14 +25,24 @@ public class Core : MonoBehaviour
         currentHP = MaxHP;
     }
 
+    public void Play()
+    {
+        currentHP = MaxHP;
+    }
+
+    public void Restart()
+    {
+        currentHP = MaxHP;
+    }
+
+    public void Stop()
+    {
+
+    }
+
     private void Update()
     {
         textHP.text = currentHP.ToString() + "/" + MaxHP.ToString();
-
-        if (isGameover)
-        {
-            textHP.text = "Gameover!";
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -56,10 +64,9 @@ public class Core : MonoBehaviour
 
         other.transform.GetComponent<Enemy>().Die();
 
-        if (currentHP < 0)
+        if (currentHP <= 0)
         {
             currentHP = 0;
-            isGameover = true;
             onGameover?.Invoke();
         }
     }

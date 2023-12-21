@@ -18,13 +18,29 @@ public class PressRecognizer : MonoBehaviour
 
     private float inputThreshold = 0.1f;
 
-    private bool canPress = true;
+    private bool canPress = false;
 
     private float missPenaltySecond = 2.0f;
 
     [Header("# Events")]
     [SerializeField]
     private UnityEvent onPressed;
+
+    public void Play()
+    {
+        canPress = true;
+    }
+
+    public void Stop()
+    {
+        StopAllCoroutines();
+        canPress = false;
+    }
+
+    public void Restart()
+    {
+        canPress = true;
+    }
 
     // Update is called once per frame
     void Update()

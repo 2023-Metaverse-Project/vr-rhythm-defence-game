@@ -7,19 +7,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private GameObject enemyPrefab;
     [SerializeField]
-    private bool isPlayOnStart = true;
-    [SerializeField]
     private float factor = 1;
     [SerializeField]
     private float delayPerSpawnGroup = 3;
-
-    private void Awake()
-    {
-        if (isPlayOnStart)
-        {
-            Play();
-        }
-    }
 
     public void GameOver()
     {
@@ -33,12 +23,24 @@ public class EnemySpawner : MonoBehaviour
 
     public void Play()
     {
-        StartCoroutine(nameof(SpawnProcess));
+        StartCoroutine(SpawnProcess());
     }
 
     public void Stop()
     {
         StopAllCoroutines();
+        GameOver();
+    }
+
+    public void Restart()
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            GameObject child = transform.GetChild(i).gameObject;
+            GameObject.Destroy(child);
+        }
+
+        StartCoroutine(SpawnProcess());
     }
 
     private IEnumerator SpawnProcess()
