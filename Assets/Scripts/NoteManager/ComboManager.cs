@@ -25,6 +25,20 @@ public class ComboManager : MonoBehaviour
         goComboImage.SetActive(false);
     }
 
+    public void Play()
+    {
+
+    }
+
+    public void Stop()
+    {
+        ResetCombo();
+    }
+
+    public void Restart()
+    {
+
+    }
     public void IncreaseCombo(int p_num = 1)
     {
         currentCombo += p_num;
